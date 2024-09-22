@@ -51,9 +51,9 @@ export const ContentContainer = styled('div', {
 
 export const EllipsisText = styled(Text, {
     display: '-webkit-box',
-    '-webkit-line-clamp': 3,  // Adjust the number of lines you want to show
+    '-webkit-line-clamp': 3,
     '-webkit-box-orient': 'vertical',
     overflow: 'hidden',
     textOverflow: 'ellipsis',
-    maxWidth: '100%',  // Ensure the width restriction
+    maxWidth: '100%',
 })

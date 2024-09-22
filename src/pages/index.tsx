@@ -1,6 +1,10 @@
+import { CreateIcon } from "@/components/CreateIcon"
+import { DiscardIcon } from "@/components/DiscardIcon"
 import { Post } from "@/components/Post"
+import { PostCreation } from "@/components/Post/PostCreation"
 import { FeedContainer, HomeContainer, PostSection, PublishContainer, PublishWrapper } from "@/styles/pages/home"
-import { Box, Button, Heading, Input, TextArea } from "@bertiare-ui/react"
+import { AddPostToDo, PostCreationHeader } from "@/styles/pages/postcreation"
+import { Box, Button, Heading } from "@bertiare-ui/react"
 
 export default function Home(){
     return(
@@ -13,11 +17,13 @@ export default function Home(){
                 </FeedContainer>
                 <PublishWrapper>
                     <PublishContainer>
-                        <Box fit="30rem">
-                            <Heading size="xxsmall">Write</Heading>
-                            <Input placeholder="Insert a title"/>
-                            <TextArea fit="100%" placeholder="Type the content"/>
-                            <Button variant="default" >Post</Button>
+                        <Box fit="28rem">
+                        <PostCreation />
+                        <AddPostToDo>
+                            <Heading size="xxsmall">Add task</Heading>
+                            <CreateIcon />
+                        </AddPostToDo>
+                        <Button variant="default" >Confirm</Button>
                         </Box>
                     </PublishContainer>
                 </PublishWrapper>

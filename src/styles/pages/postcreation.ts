@@ -1,0 +1,22 @@
+import { styled } from "..";
+
+export const PostCreationContainer = styled('div', {
+    display: 'flex',
+    alignItems: 'start',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap: '$4',
+})
+
+export const PostCreationHeader = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+})
+
+export const AddPostToDo = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+})

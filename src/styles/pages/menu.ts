@@ -22,7 +22,6 @@ export const MenuContainer = styled('div', {
     justifyContent: 'center',
     flexDirection: 'column',
     paddingBottom: '$4',
-    borderBottom: '1px solid $backgroundInverse',
 })
 
 export const MenuSection = styled('div', {

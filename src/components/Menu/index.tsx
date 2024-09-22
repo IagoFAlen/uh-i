@@ -27,7 +27,7 @@ export function Menu(props: MenuProps){
                 </MenuContainer>
                 <MenuContainer>
                     <SectionTitle>
-                        <Heading size="xxsmall">Likes</Heading>
+                        <Heading size="xxsmall">Following</Heading>
                     </SectionTitle>
                     <MenuSection>
                         <Tab title="Home" >
@@ -46,45 +46,7 @@ export function Menu(props: MenuProps){
                 </MenuContainer>
                 <MenuContainer>
                     <SectionTitle>
-                        <Heading size="xxsmall">Likes</Heading>
-                    </SectionTitle>
-                    <MenuSection>
-                        <Tab title="Home" >
-                            <MdOutlineHome size={size}/>
-                        </Tab>
-                        <Tab title="Trending">
-                            <MdOutlineTrendingUp size={size}/>
-                        </Tab>
-                        <Tab title="Explore">
-                            <MdOutlineExplore size={size}/>
-                        </Tab>
-                        <Tab title="Community">
-                            <MdOutlinePeople size={size}/>
-                        </Tab>
-                    </MenuSection>
-                </MenuContainer>
-                <MenuContainer>
-                    <SectionTitle>
-                        <Heading size="xxsmall">Likes</Heading>
-                    </SectionTitle>
-                    <MenuSection>
-                        <Tab title="Home" >
-                            <MdOutlineHome size={size}/>
-                        </Tab>
-                        <Tab title="Trending">
-                            <MdOutlineTrendingUp size={size}/>
-                        </Tab>
-                        <Tab title="Explore">
-                            <MdOutlineExplore size={size}/>
-                        </Tab>
-                        <Tab title="Community">
-                            <MdOutlinePeople size={size}/>
-                        </Tab>
-                    </MenuSection>
-                </MenuContainer>
-                <MenuContainer>
-                    <SectionTitle>
-                        <Heading size="xxsmall">Likes</Heading>
+                        <Heading size="xxsmall">Followers</Heading>
                     </SectionTitle>
                     <MenuSection>
                         <Tab title="Home" >
