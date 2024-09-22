@@ -7,8 +7,6 @@ export const AppContainer = styled('div', {
                             'header header header'
                             'aside main main'
                         `,
-
-    width: '100%',
     minHeight: '100vh',
     backgroundColor: '$appBackground',
     color: '$text',
@@ -19,6 +17,7 @@ export const AsideWrapper = styled('div', {
     gridArea: 'aside',
     position: 'relative',
     marginTop: '$16',
+    
 })
 
 export const AsideContainer = styled('aside', {
@@ -44,6 +43,4 @@ export const HeaderContainer = styled('header', {
 export const MainContainer = styled('main', {
     gridArea: 'main',
     paddingTop: '$20',
-    alignContent: 'center',
-    justifySelf: 'start',
 })
