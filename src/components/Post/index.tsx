@@ -16,7 +16,7 @@ export function Post(props: PostProps){
                     </SettingsContainer>
 
                     <ProfileContainer>
-                        <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size=""/>
+                        <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" />
                         <ProfileInfo>
                             <Heading size="xxsmall">Iago Figueira</Heading>
                             <Text size="xsmall">Brazil</Text>

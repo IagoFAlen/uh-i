@@ -1,68 +1,77 @@
-import { MenuContainer, MenuSection, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
+import { FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
 import { MenuProps } from "./types";
 import { Tab } from "./Tab";
 import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople } from "react-icons/md";
-import { Heading } from "@bertiare-ui/react";
+import { Avatar, Button, Heading, Text } from "@bertiare-ui/react";
 
 export function Menu(props: MenuProps){
-    const size = 24
+    const size = 28
     return(
         <>
+            <LogoContainer>
+                <Heading>UH-I</Heading>
+            </LogoContainer>
+
             <MenuWrapper>
                 <MenuContainer>
                     <MenuSection>
-                        <Tab title="Home" >
+                        <Tab title="Home" size="xsmall">
                             <MdOutlineHome size={size}/>
                         </Tab>
-                        <Tab title="Trending">
+                        <Tab title="Trending" size="xsmall">
                             <MdOutlineTrendingUp size={size}/>
                         </Tab>
-                        <Tab title="Explore">
+                        <Tab title="Explore" size="xsmall">
                             <MdOutlineExplore size={size}/>
                         </Tab>
-                        <Tab title="Community">
+                        <Tab title="Community" size="xsmall">
                             <MdOutlinePeople size={size}/>
                         </Tab>
                     </MenuSection>
                 </MenuContainer>
                 <MenuContainer>
                     <SectionTitle>
-                        <Heading size="xxsmall">Following</Heading>
+                        <Heading size="xsmall">Following</Heading>
                     </SectionTitle>
                     <MenuSection>
-                        <Tab title="Home" >
-                            <MdOutlineHome size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Trending">
-                            <MdOutlineTrendingUp size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Explore">
-                            <MdOutlineExplore size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Community">
-                            <MdOutlinePeople size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
+                        <Button variant="inverse" fit="100%">Show more</Button>
                     </MenuSection>
                 </MenuContainer>
                 <MenuContainer>
                     <SectionTitle>
-                        <Heading size="xxsmall">Followers</Heading>
+                        <Heading size="xsmall">Followers</Heading>
                     </SectionTitle>
                     <MenuSection>
-                        <Tab title="Home" >
-                            <MdOutlineHome size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Trending">
-                            <MdOutlineTrendingUp size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Explore">
-                            <MdOutlineExplore size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Community">
-                            <MdOutlinePeople size={size}/>
+                        <Tab title="Iago Figueira" size="xxsmall">
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
+                        <Button variant="inverse" fit="100%">Show more</Button>
                     </MenuSection>
                 </MenuContainer>
+                <FooterContainer>
+                    <Heading size="xxsmall">A Bertiare-ui application</Heading>
+                </FooterContainer>
             </MenuWrapper>
         </>
     )

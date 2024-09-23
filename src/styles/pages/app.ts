@@ -4,8 +4,8 @@ import { styled } from "..";
 export const AppContainer = styled('div', {
     display: 'grid',
     gridTemplateAreas: `
-                            'header header header'
-                            'aside main main'
+                            'aside header '
+                            'aside main '
                         `,
     minHeight: '100vh',
     backgroundColor: '$appBackground',
@@ -16,18 +16,15 @@ export const AppContainer = styled('div', {
 export const AsideWrapper = styled('div', {
     gridArea: 'aside',
     position: 'relative',
-    marginTop: '$16',
     
 })
 
 export const AsideContainer = styled('aside', {
     position: 'fixed',
-    width: '20%',
-    background: '$background',
 })
 
 export const AsideBox = styled(Box, {
-    padding: '0 0 0 $4',
+    padding: '$4',
 })
 
 export const HeaderWrapper = styled('div', {
@@ -37,10 +34,11 @@ export const HeaderWrapper = styled('div', {
 
 export const HeaderContainer = styled('header', {
     position: 'fixed',
-    width: '100%',
+
+
 })
 
 export const MainContainer = styled('main', {
     gridArea: 'main',
-    paddingTop: '$20',
+    paddingTop: '$30',
 })

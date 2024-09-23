@@ -1,9 +1,22 @@
 import { styled } from "..";
 
+export const LogoContainer = styled('div', {
+    display: 'flex',
+    alignItems: 'start',
+    justifyItems: 'start',
+    padding: '0 $6',
+    width: '100%',
+    
+})
+
 export const MenuWrapper = styled('div', {
-    height: '93vh',
+    display: 'flex',
+    alignItems: 'start',
+    justifyContent: 'space-between',
+    flexDirection: 'column',
+
     overflowY: 'auto',
-    padding: '$4',
+    padding: '$6',
 
     '&::-webkit-scrollbar': {
         backgroundColor: 'transparent',
@@ -22,6 +35,7 @@ export const MenuContainer = styled('div', {
     justifyContent: 'center',
     flexDirection: 'column',
     paddingBottom: '$4',
+    width: '100%',
 })
 
 export const MenuSection = styled('div', {
@@ -30,8 +44,17 @@ export const MenuSection = styled('div', {
     justifyContent: 'center',
     gap: '$3',
     flexDirection: 'column',
+    width: '100%',
+
 })
 
 export const SectionTitle = styled('div', {
     paddingBottom: '$3',
+})
+
+export const FooterContainer = styled('footer', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%'
 })

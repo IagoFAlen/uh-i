@@ -7,7 +7,7 @@ export function Tab(props: TabProps){
         <>
             <TabContainer>
                 {props.children}
-                <Heading size="xsmall">{props.title}</Heading>
+                <Heading size={props.size}>{props.title}</Heading>
             </TabContainer>
         </>
     )
