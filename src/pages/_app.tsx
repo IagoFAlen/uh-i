@@ -3,64 +3,74 @@ import { globalStyles } from "@/styles/global";
 import { darkTheme, lightTheme } from "@bertiare-ui/react";
 import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "@/styles/pages/theming/themeprovider";
-import { AppContainer, AsideBox, AsideContainer, AsideWrapper, HeaderContainer, HeaderWrapper, MainContainer } from "@/styles/pages/app";
+import { AppContainer, MainContainer } from "@/styles/pages/app";
 import { Header } from "@/components/Header";
-import { Menu } from "@/components/Menu";
+import { AsideLayout } from "@/layout/Aside";
+import { HeaderLayout } from "@/layout/Header";
 
-globalStyles()
-
-const ThemeProps = lightTheme
+globalStyles();
 
 export interface ThemesContextTypes {
-  changeTheme: (theme: string) => void
+  changeTheme: (theme: string) => void;
 }
 
-export const ThemesContext = createContext({} as ThemesContextTypes)
 
-export default function App({ Component, pageProps }: AppProps){
-    const [ theme, setTheme ] = useState<string>('light-theme')
-    const [ newTheme, setNewTheme ] = useState<typeof ThemeProps>(lightTheme)
-  
-    function changeTheme( theme: string ){
-      setTheme(theme)
+
+export const ThemesContext = createContext({} as ThemesContextTypes);
+
+export default function App({ Component, pageProps }: AppProps) {
+  const [theme, setTheme] = useState<string>("light-theme");
+  const [currentTheme, setCurrentTheme] = useState<typeof lightTheme | typeof darkTheme>(lightTheme);
+  const [isHydrated, setIsHydrated] = useState(false);
+
+
+  function handleTheme(theme: string) {
+    switch (theme) {
+      case "light-theme":
+        localStorage.setItem("theme", "light-theme");
+        break;
+      case "dark-theme":
+        localStorage.setItem("theme", "dark-theme");
+        break;
+      default:
+        localStorage.setItem("theme", "light-theme");
+        break;
+      
     }
-  
-    useEffect(() => {
-      switch(theme){
-        case 'light-theme':
-          setNewTheme(lightTheme)
-          break
-        case 'dark-theme':
-          setNewTheme(darkTheme)
-          break
-        default:
-          setNewTheme(lightTheme)
-      }
-    }, [ theme ])
+  }
 
-    return(
-        <>
-            <ThemesContext.Provider value={{ changeTheme }}>
-                <ThemeProvider className={newTheme}>
-                    <AppContainer>
-                      <AsideWrapper>
-                        <AsideContainer>
-                            <AsideBox>
-                              <Menu />
-                            </AsideBox>
-                        </AsideContainer>
-                      </AsideWrapper>
-                      <HeaderWrapper>
-                        <HeaderContainer>
-                            <Header />
-                        </HeaderContainer>
-                      </HeaderWrapper>
-                        <MainContainer>
-                            <Component {...pageProps} />
-                        </MainContainer>
-                    </AppContainer>
-                </ThemeProvider>
-            </ThemesContext.Provider>
-        </>
-    )
+  function changeTheme(theme: string) {
+    setTheme(theme);
+  }
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && !isHydrated) {
+      const storedTheme = localStorage.getItem("theme");
+      if (storedTheme) {
+        setTheme(storedTheme);
+      }
+      setIsHydrated(true);
+    }
+  }, [isHydrated]);
+
+  useEffect(() => {
+    if (typeof window !== "undefined" && isHydrated) {
+      handleTheme(theme);
+      setCurrentTheme(theme === "dark-theme" ? darkTheme : lightTheme);
+    }
+  }, [theme, isHydrated]);
+
+  return (
+    <ThemesContext.Provider value={{ changeTheme }}>
+      <ThemeProvider className={currentTheme}>
+        <AppContainer>
+          <AsideLayout />
+          <HeaderLayout />
+          <MainContainer>
+            <Component {...pageProps} />
+          </MainContainer>
+        </AppContainer>
+      </ThemeProvider>
+    </ThemesContext.Provider>
+  );
 }

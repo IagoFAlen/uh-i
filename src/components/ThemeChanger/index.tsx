@@ -9,11 +9,15 @@ import { ThemesContext } from "@/pages/_app";
 export function ThemeChanger(props: ThemeChangerProps){
     const [ darkTheme, setDarkTheme ] = useState<boolean>(false)
     const { changeTheme } = useContext(ThemesContext)
-
+    
     function toggleTheme(){
         setDarkTheme(!darkTheme)
     }
-
+    
+    useEffect(() => {
+        setDarkTheme(localStorage.getItem("theme") === "dark-theme");
+    }, []);
+    
     useEffect(() => {
         darkTheme ? changeTheme('dark-theme') : changeTheme('light-theme')
     }, [darkTheme])
@@ -23,7 +27,7 @@ export function ThemeChanger(props: ThemeChangerProps){
             <ThemeChangerContainer>
                 <ToggleTheme onClick={ toggleTheme }>
                     {
-                        darkTheme ? <FiSun /> : <FiMoon />
+                        darkTheme ? <FiMoon /> : <FiSun />
                     }
                 </ToggleTheme>
             </ThemeChangerContainer>

@@ -21,9 +21,10 @@ export const SettingsIcon = styled('div', {
     borderRadius: '$full',
     padding: '$2',
     transition: 'background 0.2s ease-in-out',
+    background: '$mutedIcon',
 
     '&:hover': {
-        background: '$mutedIcon',
+        background: '$mutedInverse',
     }
 })
 
@@ -32,8 +33,19 @@ export const ProfileContainer = styled('div', {
     alignItems: 'center',
     gap: '$3',
     paddingBottom: '$4',
-    borderBottom: '1px solid $backgroundInverse',
     cursor: 'pointer',
+})
+
+export const PostDetails = styled('div', {
+    display: 'flex',
+    alignItems: 'start',
+    justifyContent: 'space-between',
+})
+
+export const Time = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
 })
 
 export const ProfileInfo = styled('div', {
@@ -47,6 +59,7 @@ export const ContentContainer = styled('div', {
     gap: '$3',
     paddingBottom: '$4',
     cursor: 'pointer',
+
 })
 
 export const EllipsisText = styled(Text, {

@@ -1,4 +1,4 @@
-import { ContentContainer, EllipsisText, PostContainer, ProfileContainer, ProfileInfo, SettingsContainer, SettingsIcon } from "@/styles/pages/post"
+import { ContentContainer, EllipsisText, PostContainer, PostDetails, ProfileContainer, ProfileInfo, SettingsContainer, SettingsIcon, Time } from "@/styles/pages/post"
 import { PostProps } from "./types"
 import { Avatar, Box, Heading, Text } from "@bertiare-ui/react"
 import { SlOptions } from "react-icons/sl";
@@ -14,14 +14,18 @@ export function Post(props: PostProps){
                             <SlOptions />
                         </SettingsIcon>
                     </SettingsContainer>
-
-                    <ProfileContainer>
-                        <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" />
-                        <ProfileInfo>
-                            <Heading size="xxsmall">Iago Figueira</Heading>
-                            <Text size="xsmall">Brazil</Text>
-                        </ProfileInfo>
-                    </ProfileContainer>
+                    <PostDetails>
+                        <ProfileContainer>
+                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" />
+                            <ProfileInfo>
+                                <Heading size="xxsmall">Iago Figueira</Heading>
+                                <Text size="xsmall">Brazil</Text>
+                            </ProfileInfo>
+                        </ProfileContainer>
+                        <Time>
+                            <Text size="small">10 min</Text>
+                        </Time>
+                    </PostDetails>
 
                     <ContentContainer>
                         <Heading size="xsmall">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste ex reprehenderit accusamus?</Heading>

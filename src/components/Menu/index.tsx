@@ -46,7 +46,7 @@ export function Menu(props: MenuProps){
                         <Tab title="Iago Figueira" size="xxsmall">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Button variant="inverse" fit="100%">Show more</Button>
+                        <Button variant="default" fit="100%">Show more</Button>
                     </MenuSection>
                 </MenuContainer>
                 <MenuContainer>
@@ -66,7 +66,7 @@ export function Menu(props: MenuProps){
                         <Tab title="Iago Figueira" size="xxsmall">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Button variant="inverse" fit="100%">Show more</Button>
+                        <Button variant="default" fit="100%">Show more</Button>
                     </MenuSection>
                 </MenuContainer>
                 <FooterContainer>

@@ -13,6 +13,16 @@ export const globalStyles = globalCss({
         '-webkit-font-smoothing': 'antialised',
     },
 
+    '&::-webkit-scrollbar': {
+        backgroundColor: 'transparent',
+        width: '4px',
+    },
+
+    '&::-webkit-scrollbar-thumb': {
+        backgroundColor: '$muted',
+        borderRadius: '$lg'
+    },
+
     'h1, h2, button': {
         fontFamily: `${GeistSans.style.fontFamily}`,
         fontWeight: 'bolder',

@@ -5,8 +5,6 @@ export const LogoContainer = styled('div', {
     alignItems: 'start',
     justifyItems: 'start',
     padding: '0 $6',
-    width: '100%',
-    
 })
 
 export const MenuWrapper = styled('div', {
@@ -56,5 +54,4 @@ export const FooterContainer = styled('footer', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    width: '100%'
 })
