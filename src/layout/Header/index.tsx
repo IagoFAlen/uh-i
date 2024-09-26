@@ -1,12 +1,14 @@
 import { Header } from "@/components/Header";
-import { HeaderContainer } from "@/styles/pages/app";
+import { HeaderContainer, HeaderWrapper } from "@/styles/pages/header";
 
 export function HeaderLayout(){
     return(
         <>
-            <HeaderContainer>
-                <Header />
-            </HeaderContainer>
+            <HeaderWrapper>
+                <HeaderContainer>
+                    <Header />
+                </HeaderContainer>
+            </HeaderWrapper>
         </>
     )
 }

@@ -1,12 +1,11 @@
 
 import { styled } from "..";
 
-export const HomeContainer = styled('div', {
+export const HomeContent = styled('div', {
     display: 'flex',
     alignItems: 'start',
-    justifyContent: 'start',
+    justifyContent: 'center',
     gap: '$6',
-    width: 'calc(100% - (18rem + 5rem))' // Total Width - (Aside Size + Gap Between Grid Size)
 })
 
 export const PublishWrapper = styled('div', {

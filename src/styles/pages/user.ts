@@ -1,12 +1,11 @@
 import { styled } from "..";
 
-export const UserContainer = styled('div', {
+export const UserContent = styled('div', {
     display: 'flex',
     alignItems: 'start',
-    justifyContent: 'start',
-    flexDirection: 'column',
+    justifyContent: 'center',
     gap: '$2',
-    width: 'calc(100% - (43.8rem))'
+    flexDirection: 'column',
 })
 
 export const EditUserInfoContainer = styled('header', {

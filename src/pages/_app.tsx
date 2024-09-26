@@ -4,9 +4,8 @@ import { darkTheme, lightTheme } from "@bertiare-ui/react";
 import { createContext, useEffect, useState } from "react";
 import { ThemeProvider } from "@/styles/pages/theming/themeprovider";
 import { AppContainer, MainContainer } from "@/styles/pages/app";
-import { Header } from "@/components/Header";
 import { AsideLayout } from "@/layout/Aside";
-import { HeaderLayout } from "@/layout/Header";
+import { PageLayout } from "@/layout/Page";
 
 globalStyles();
 
@@ -65,9 +64,10 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider className={currentTheme}>
         <AppContainer>
           <AsideLayout />
-          <HeaderLayout />
           <MainContainer>
-            <Component {...pageProps} />
+            <PageLayout>
+              <Component {...pageProps} />
+            </PageLayout>
           </MainContainer>
         </AppContainer>
       </ThemeProvider>

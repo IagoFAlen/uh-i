@@ -1,14 +1,16 @@
 import { Feed } from "@/components/Feed";
 import { UserProfile } from "@/components/User/UserProfile";
-import { UserContainer } from "@/styles/pages/user";
+import { HeaderLayout } from "@/layout/Header";
+import { UserAlignContainer, UserContainer, UserContent } from "@/styles/pages/user";
 
 export default function User(){
     return(
         <>
-            <UserContainer>
+            <HeaderLayout />
+            <UserContent>
                 <UserProfile />                
                 <Feed />
-            </UserContainer>
+            </UserContent>
         </>
     )
 }
