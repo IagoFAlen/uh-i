@@ -3,8 +3,44 @@ import { MenuProps } from "./types";
 import { Tab } from "./Tab";
 import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople } from "react-icons/md";
 import { Avatar, Button, Heading, Text } from "@bertiare-ui/react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 export function Menu(props: MenuProps){
+    const baseTabs = ['Home', 'Trending', 'Explore', 'Community']
+    const router = useRouter()
+    const [formatPathName, setFormatPathName] = useState<string>(router.pathname.replace('/', ''));
+    
+    console.log('Pathname: ', formatPathName)
+
+    const [ unfocusedTabs, setUnfocusedTabs ] = useState(baseTabs)
+
+    useEffect(() => {
+        formatHomePathName()
+        handleTabFocus(formatPathName)
+    }, [formatPathName])
+    
+    function formatHomePathName(){
+        if(formatPathName.length === 0)
+            setFormatPathName('Home')
+    }
+
+    function handleTabFocus(tab: string){
+        const filteredTabs = baseTabs.filter(tabs => tabs !== tab)
+        setUnfocusedTabs(filteredTabs)
+    }
+
+    function isUnfocusedTab(tab: string){
+        return unfocusedTabs.includes(tab)
+    }
+
+    function focusTab(tab: string){
+        if(!(isUnfocusedTab(tab)))
+            return 'focus'
+
+        return undefined
+    }
+
     const size = 28
     return(
         <>
@@ -15,16 +51,16 @@ export function Menu(props: MenuProps){
             <MenuWrapper>
                 <MenuContainer>
                     <MenuSection>
-                        <Tab title="Home" size="xsmall">
+                        <Tab title="Home" size="xsmall" variant={focusTab('Home')} >
                             <MdOutlineHome size={size}/>
                         </Tab>
-                        <Tab title="Trending" size="xsmall">
+                        <Tab title="Trending" size="xsmall" variant={focusTab('Trending')} >
                             <MdOutlineTrendingUp size={size}/>
                         </Tab>
-                        <Tab title="Explore" size="xsmall">
+                        <Tab title="Explore" size="xsmall" variant={focusTab('Explore')} >
                             <MdOutlineExplore size={size}/>
                         </Tab>
-                        <Tab title="Community" size="xsmall">
+                        <Tab title="Community" size="xsmall" variant={focusTab('Community')} >
                             <MdOutlinePeople size={size}/>
                         </Tab>
                     </MenuSection>

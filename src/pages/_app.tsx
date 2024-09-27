@@ -13,8 +13,6 @@ export interface ThemesContextTypes {
   changeTheme: (theme: string) => void;
 }
 
-
-
 export const ThemesContext = createContext({} as ThemesContextTypes);
 
 export default function App({ Component, pageProps }: AppProps) {

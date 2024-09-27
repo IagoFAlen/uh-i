@@ -29,7 +29,7 @@ export const EditUserInfo = styled('div', {
 
     '&:hover': {
         background: '$mutedInverse',
-    }
+    } 
 })
 
 export const UserProfileContainer = styled('div', {
@@ -94,7 +94,8 @@ export const UserTab = styled('div', {
     padding: '$3 $5',
     borderRadius: '$md',
     cursor: 'pointer',
-
+    transition: 'background 0.2s ease-in-out',
+    
     '&:hover': {
         background: '$mutedIcon',
     },

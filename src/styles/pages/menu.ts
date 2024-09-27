@@ -15,14 +15,13 @@ export const MenuWrapper = styled('div', {
 
     overflowY: 'auto',
     padding: '$6',
-
+    maxHeight: '90vh',
     '&::-webkit-scrollbar': {
         backgroundColor: 'transparent',
         width: '2px',
     },
 
     '&::-webkit-scrollbar-thumb': {
-        backgroundColor: '$backgroundInverse',
         borderRadius: '$lg'
     }
 })
@@ -40,7 +39,7 @@ export const MenuSection = styled('div', {
     display: 'flex',
     alignItems: 'start',
     justifyContent: 'center',
-    gap: '$3',
+    gap: '$1',
     flexDirection: 'column',
     width: '100%',
 
