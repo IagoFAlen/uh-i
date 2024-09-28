@@ -20,6 +20,9 @@ export const TabContainer = styled('div', {
             focus: {
                 background: '$mutedIcon',
             },
+            profile: {
+                padding: '$2 $3',
+            },
         }
     }
 })

@@ -9,7 +9,7 @@ export function TrendingTopic(props: TrendingTopicProps){
                 <Box>
                     <TopicBox>
                         <TopicHeadingContainer>
-                            <Heading size="xsmall">{props.title}</Heading>
+                            <Heading size="xxsmall">{props.title}</Heading>
                         </TopicHeadingContainer>
                         <TopicQuantityContainer>
                             <Text size="xsmall">{props.quantity} posts</Text>

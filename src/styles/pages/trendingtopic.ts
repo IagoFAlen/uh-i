@@ -26,6 +26,6 @@ export const TopicHeadingContainer = styled('div', {
 export const TopicQuantityContainer = styled('div', {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'end',
+    justifyContent: 'center',
     width: '100%',
 })

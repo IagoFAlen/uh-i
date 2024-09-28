@@ -53,4 +53,5 @@ export const FooterContainer = styled('footer', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
 })

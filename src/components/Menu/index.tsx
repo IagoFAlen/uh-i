@@ -70,16 +70,16 @@ export function Menu(props: MenuProps){
                         <Heading size="xsmall">Following</Heading>
                     </SectionTitle>
                     <MenuSection>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
                         <Button variant="default" fit="100%">Show more</Button>
@@ -90,24 +90,24 @@ export function Menu(props: MenuProps){
                         <Heading size="xsmall">Followers</Heading>
                     </SectionTitle>
                     <MenuSection>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall">
+                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
                         <Button variant="default" fit="100%">Show more</Button>
                     </MenuSection>
                 </MenuContainer>
                 <FooterContainer>
-                    <Heading size="xxsmall">A Bertiare-ui application</Heading>
-                </FooterContainer>
+                    <Text size="xsmall">A Bertiare-ui app</Text>
+              </FooterContainer>
             </MenuWrapper>
         </>
     )

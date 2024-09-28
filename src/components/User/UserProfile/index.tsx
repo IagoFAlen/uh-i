@@ -1,19 +1,25 @@
-import { EditUserInfo, EditUserInfoContainer, UserProfileContainer, UserProfileData, UserProfileInfo } from "@/styles/pages/user";
-import { Avatar, Box, Heading, Text } from "@bertiare-ui/react";
+import { EditUserInfo, EditUserInfoContainer, UserProfileCommunityFollowage, UserProfileContainer, UserProfileData, UserProfileInfo } from "@/styles/pages/user";
+import { Avatar, Box, Heading, Button, Text } from "@bertiare-ui/react";
 import { AccountDetails } from "../AccountDetails";
 import { IoPencil } from "react-icons/io5";
 import { UserTabs } from "../UserTabMenu";
+import { UserProfileProps } from "./types";
 
-export function UserProfile(){
+export function UserProfile(props: UserProfileProps){
     return(
         <>
             <UserProfileContainer>
                 <Box>
-                    <EditUserInfoContainer>
-                        <EditUserInfo>
-                            <IoPencil />
-                        </EditUserInfo>
-                    </EditUserInfoContainer>
+                    { props.variant === 'personal' && 
+                        <>
+                            <EditUserInfoContainer>
+                                <EditUserInfo>
+                                    <IoPencil />
+                                </EditUserInfo>
+                            </EditUserInfoContainer>
+                        </>
+                    }
+                    <UserProfileCommunityFollowage>
                         <UserProfileData>
                             <Avatar size="xlarge" src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg"/>
                             <UserProfileInfo>
@@ -21,8 +27,19 @@ export function UserProfile(){
                                 <Text size="xsmall">Brazil</Text>
                             </UserProfileInfo>
                         </UserProfileData>
-                        <AccountDetails />
-                        <UserTabs />
+                        {
+                            props.variant !== 'personal' && 
+                            <>
+                                <Button variant="default">Follow</Button>
+                            </>
+                        }
+                    </UserProfileCommunityFollowage>
+                    <AccountDetails />
+                    { props.variant === 'personal' && 
+                        <>
+                            <UserTabs />
+                        </>
+                    }
                 </Box>
             </UserProfileContainer>
         </>

@@ -2,10 +2,10 @@
 import { styled } from "..";
 
 export const HomeContent = styled('div', {
-    display: 'flex',
-    alignItems: 'start',
-    justifyContent: 'center',
-    gap: '$6',
+    display: 'grid',
+    width: '40rem',
+    gridTemplateColumns: 'repeat(4, auto)',
+    gap: '$2',
 })
 
 export const PublishWrapper = styled('div', {

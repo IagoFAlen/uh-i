@@ -45,6 +45,12 @@ export const UserProfileData = styled('div', {
     gap: '$3',
 })
 
+export const UserProfileCommunityFollowage = styled('div', {
+    display: 'flex',
+    alignItems: 'start',
+    justifyContent: 'space-between',
+})
+
 export const UserProfileInfo = styled('div', {
     display: 'flex',
     alignItems: 'start',
