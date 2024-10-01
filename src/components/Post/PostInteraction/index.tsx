@@ -1,7 +1,8 @@
 import { PostInteractionsProps } from "./types";
 import { Interaction, PostInteractions } from "@/styles/pages/postinteraction";
 import { Text } from "@bertiare-ui/react";
-import { FaRegHeart, FaRegComment, FaRegSave, FaRegShareSquare } from "react-icons/fa";
+import { FaRegHeart, FaRegComment, FaRegBookmark, FaRegShareSquare } from "react-icons/fa";
+import { IoShareSocialOutline } from "react-icons/io5";
 
 export function PostInteraction(props: PostInteractionsProps){
     return(
@@ -16,10 +17,10 @@ export function PostInteraction(props: PostInteractionsProps){
                     <Text>444</Text>
                 </Interaction>
                 <Interaction>
-                    <FaRegSave />
+                    <FaRegBookmark />
                 </Interaction>
                 <Interaction>
-                    <FaRegShareSquare />
+                    <IoShareSocialOutline />
                 </Interaction>
             </PostInteractions>
         </>

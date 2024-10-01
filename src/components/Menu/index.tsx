@@ -5,43 +5,55 @@ import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople }
 import { Avatar, Button, Heading, Text } from "@bertiare-ui/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import { HiOutlinePencilSquare } from "react-icons/hi2";
+import { Navigate } from "@/styles/pages/navigation";
 
 export function Menu(props: MenuProps){
-    const baseTabs = ['Home', 'Trending', 'Explore', 'Community']
+    const baseTabs = ['home', 'trending', 'explore', 'community', 'write']
     const router = useRouter()
-    const [formatPathName, setFormatPathName] = useState<string>(router.pathname.replace('/', ''));
-    
-    console.log('Pathname: ', formatPathName)
+    const [formatPathName, setFormatPathName] = useState<string>(router.pathname.replace('/', ''))
+    const [unfocusedTabs, setUnfocusedTabs] = useState(baseTabs)
 
-    const [ unfocusedTabs, setUnfocusedTabs ] = useState(baseTabs)
+    useEffect(() => {
+        const handleRouteChange = (url: string) => {
+            setFormatPathName(url.replace('/', ''))
+        };
+
+        router.events.on('routeChangeComplete', handleRouteChange)
+
+        return () => {
+            router.events.off('routeChangeComplete', handleRouteChange)
+        };
+    }, [router.events])
 
     useEffect(() => {
         formatHomePathName()
         handleTabFocus(formatPathName)
     }, [formatPathName])
-    
-    function formatHomePathName(){
-        if(formatPathName.length === 0)
-            setFormatPathName('Home')
+
+    function formatHomePathName() {
+        if (formatPathName.length === 0) 
+            setFormatPathName('home')
     }
 
-    function handleTabFocus(tab: string){
-        const filteredTabs = baseTabs.filter(tabs => tabs !== tab)
-        setUnfocusedTabs(filteredTabs)
+    function handleTabFocus(tab: string) {
+        const filteredTabs = baseTabs.filter((tabs) => tabs !== tab)
+        setUnfocusedTabs(filteredTabs);
     }
 
-    function isUnfocusedTab(tab: string){
+    function isUnfocusedTab(tab: string) {
         return unfocusedTabs.includes(tab)
     }
 
-    function focusTab(tab: string){
-        if(!(isUnfocusedTab(tab)))
+    function focusTab(tab: string) {
+        if (!isUnfocusedTab(tab)) 
             return 'focus'
 
-        return undefined
+        return undefined;
     }
+    
+    const size = 24
 
-    const size = 28
     return(
         <>
             <LogoContainer>
@@ -50,18 +62,31 @@ export function Menu(props: MenuProps){
             <MenuWrapper>
                 <MenuContainer>
                     <MenuSection>
-                        <Tab title="Home" size="xsmall" variant={focusTab('Home')} >
-                            <MdOutlineHome size={size}/>
-                        </Tab>
-                        <Tab title="Trending" size="xsmall" variant={focusTab('Trending')} >
-                            <MdOutlineTrendingUp size={size}/>
-                        </Tab>
-                        <Tab title="Explore" size="xsmall" variant={focusTab('Explore')} >
-                            <MdOutlineExplore size={size}/>
-                        </Tab>
-                        <Tab title="Community" size="xsmall" variant={focusTab('Community')} >
-                            <MdOutlinePeople size={size}/>
-                        </Tab>
+                        <Navigate variant="fit" href="/">
+                            <Tab title="Home" size="xsmall" variant={focusTab('home')} >
+                                <MdOutlineHome size={size}/>
+                            </Tab>
+                        </Navigate>
+                        <Navigate variant="fit" href="/trending">
+                            <Tab title="Trending" size="xsmall" variant={focusTab('trending')} >
+                                <MdOutlineTrendingUp size={size}/>
+                            </Tab>
+                        </Navigate>
+                        <Navigate variant="fit" href="/explore">
+                            <Tab title="Explore" size="xsmall" variant={focusTab('explore')} >
+                                <MdOutlineExplore size={size}/>
+                            </Tab>
+                        </Navigate>
+                        <Navigate variant="fit" href="/community">
+                            <Tab title="Community" size="xsmall" variant={focusTab('community')} >
+                                <MdOutlinePeople size={size}/>
+                            </Tab>
+                        </Navigate>
+                        <Navigate variant="fit" href="/write">
+                            <Tab title="Write" size="xsmall" variant={focusTab('write')} >
+                                <HiOutlinePencilSquare size={size}/>
+                            </Tab>
+                        </Navigate>
                     </MenuSection>
                 </MenuContainer>
                 <MenuContainer>
