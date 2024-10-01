@@ -19,4 +19,5 @@ export const LayoutContent = styled('div', {
     width: '40rem',
     gridTemplateColumns: 'repeat(4, auto)',
     gap: '$2',
+    paddingBottom: '$6',
 })

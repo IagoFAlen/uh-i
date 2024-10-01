@@ -21,7 +21,7 @@ export const TabContainer = styled('div', {
                 background: '$mutedIcon',
             },
             profile: {
-                padding: '$2 $3',
+                padding: '$2 $8 $2 $2',
             },
         }
     }

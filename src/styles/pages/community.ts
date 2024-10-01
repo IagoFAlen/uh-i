@@ -13,5 +13,4 @@ export const CommunityProfiles = styled('div', {
     justifyContent: 'center',
     flexDirection: 'column',
     gap: '$3',
-    paddingBottom: '$3',
 })

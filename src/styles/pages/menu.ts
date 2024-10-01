@@ -5,6 +5,7 @@ export const LogoContainer = styled('div', {
     alignItems: 'start',
     justifyItems: 'start',
     padding: '0 $6',
+    cursor: 'pointer',
 })
 
 export const MenuWrapper = styled('div', {
@@ -37,7 +38,7 @@ export const MenuContainer = styled('div', {
 
 export const MenuSection = styled('div', {
     display: 'flex',
-    alignItems: 'start',
+    alignItems: 'center',
     justifyContent: 'center',
     gap: '$1',
     flexDirection: 'column',
@@ -47,6 +48,11 @@ export const MenuSection = styled('div', {
 
 export const SectionTitle = styled('div', {
     paddingBottom: '$3',
+})
+
+export const ButtonWrapper = styled('div', {
+    width: '100%',
+    paddingTop: '$3',
 })
 
 export const FooterContainer = styled('footer', {

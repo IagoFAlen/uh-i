@@ -1,16 +1,16 @@
 import { CreatePost } from "@/components/CreatePost";
 import { Feed } from "@/components/Feed";
 import { HeaderLayout } from "@/layout/Header";
-import { HomeContent } from "@/styles/pages/home";
+import { LayoutContent } from "@/styles/pages/layout";
 
 export default function Home(){
     return(
         <>
             <HeaderLayout />
-            <HomeContent>
+            <LayoutContent>
                 <Feed />
                 <CreatePost />
-            </HomeContent>
+            </LayoutContent>
         </>
     )
 }

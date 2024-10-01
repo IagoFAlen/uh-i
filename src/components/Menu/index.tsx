@@ -1,4 +1,4 @@
-import { FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
+import { ButtonWrapper, FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
 import { MenuProps } from "./types";
 import { Tab } from "./Tab";
 import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople } from "react-icons/md";
@@ -45,9 +45,8 @@ export function Menu(props: MenuProps){
     return(
         <>
             <LogoContainer>
-                <Heading>UH-I</Heading>
+                <Heading decoration="highlight">UH-I</Heading>
             </LogoContainer>
-
             <MenuWrapper>
                 <MenuContainer>
                     <MenuSection>
@@ -82,7 +81,9 @@ export function Menu(props: MenuProps){
                         <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Button variant="default" fit="100%">Show more</Button>
+                        <ButtonWrapper>
+                            <Button variant="default" fit="100%">Show more</Button>
+                        </ButtonWrapper>
                     </MenuSection>
                 </MenuContainer>
                 <MenuContainer>
@@ -102,12 +103,14 @@ export function Menu(props: MenuProps){
                         <Tab title="Iago Figueira" size="xxsmall" variant="profile">
                             <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
                         </Tab>
-                        <Button variant="default" fit="100%">Show more</Button>
+                        <ButtonWrapper>
+                            <Button variant="default" fit="100%">Show more</Button>
+                        </ButtonWrapper>
                     </MenuSection>
                 </MenuContainer>
                 <FooterContainer>
                     <Text size="xsmall">A Bertiare-ui app</Text>
-              </FooterContainer>
+                </FooterContainer>
             </MenuWrapper>
         </>
     )
