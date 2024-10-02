@@ -5,7 +5,7 @@ import { FaRegTrashCan } from "react-icons/fa6"
 export function DiscardIcon(props: DiscardProps){
     return(
         <>
-            <DiscardIconContainer>
+            <DiscardIconContainer {...props}>
                 <FaRegTrashCan />
             </DiscardIconContainer>        
         </>

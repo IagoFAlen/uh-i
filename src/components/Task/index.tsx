@@ -1,35 +1,41 @@
 import { WriteHeadingWrapper, WriteLabel } from "@/styles/pages/write";
 import { Heading, Input, TextArea } from "@bertiare-ui/react";
 import { useState } from "react";
+import { DiscardIcon } from "../DiscardIcon";
 
-export function Task(){
+interface TaskProps {
+    isElement?: boolean;
+    task: { title: string; content: string };
+    onTaskChange: (key: 'title' | 'content', value: string) => void;
+    onRemove: () => void; // Optional for the main task
+    isMainTask?: boolean; // Optional to differentiate between main and additional tasks
+}
 
-    const [ inputValue, setInputValue ] = useState("")
-    const [ textAreaValue, setTextAreaValue ] = useState("")
+  
+export function Task({ task, onTaskChange, onRemove, isElement = false }: TaskProps){
 
-    function handleInputChange(event: React.ChangeEvent<HTMLInputElement>){
-        setInputValue(event.target.value)
+    function handleOnTitleTaskChange(event: React.ChangeEvent<HTMLInputElement>){
+        onTaskChange('title', event.target.value)
     }
 
-    function handleTextAreaChange(event: React.ChangeEvent<HTMLTextAreaElement>){
-        setTextAreaValue(event.target.value)
+    function handleOnContentTaskChange(event: React.ChangeEvent<HTMLTextAreaElement>){
+        onTaskChange('content', event.target.value)
     }
 
-    console.log('Input:', inputValue)
-    console.log('TextArea: ', textAreaValue)
     return(
         <>
             <WriteLabel>
                 <WriteHeadingWrapper>
                     <Heading size="minimum">Title</Heading>
+                    { isElement && <DiscardIcon onClick={() => { console.log('Remove Task Clicked!'); onRemove(); }} /> }
                 </WriteHeadingWrapper>
-                <Input fit="100%" placeholder="Write your heading title here" onChange={handleInputChange} value={inputValue} />
+                <Input fit="100%" placeholder="Write your heading title here" value={task.title} onChange={handleOnTitleTaskChange} />
             </WriteLabel>
             <WriteLabel>
                 <WriteHeadingWrapper>
                     <Heading size="minimum">Content</Heading>
                 </WriteHeadingWrapper>
-                <TextArea fit="100%" placeholder="Write your content description here" onChange={handleTextAreaChange} value={textAreaValue} />
+                <TextArea fit="100%" placeholder="Write your content description here" value={task.content} onChange={handleOnContentTaskChange} />
             </WriteLabel>
         </>
     )

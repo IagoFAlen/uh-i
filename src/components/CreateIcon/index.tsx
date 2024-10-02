@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa6";
 export function CreateIcon(props: CreateIconProps){
     return(
         <>
-            <CreateIconContainer>
+            <CreateIconContainer {...props}>
                 <FaPlus />
             </CreateIconContainer>
         </>

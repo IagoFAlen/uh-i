@@ -7,7 +7,7 @@ export function AccountDetails(){
             <AccountDetailsContainer>
                 <AccountDetailsCommunity>
                     <Data>
-                        <Heading size="xxsmall">90</Heading>
+                        <Heading size="xxsmall">34.232</Heading>
                         <Text size="small">Following</Text>
                     </Data>
 

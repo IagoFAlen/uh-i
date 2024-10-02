@@ -9,12 +9,12 @@ export const WriteForm = styled('form', {
     alignItems: 'start',
     justifyContent: 'start',
     flexDirection: 'column',
-    gap: '$4',
+    gap: '$2',
 })
 
 export const WriteLabel = styled('label', {
     display: 'flex',
-    alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'start',
     flexDirection: 'column',
     width: '100%',
@@ -22,15 +22,16 @@ export const WriteLabel = styled('label', {
 
 export const WriteHeadingWrapper = styled('div', {
     display: 'flex',
-    alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
     padding: '$2',
 })
 
 export const WriteButtonWrapper = styled('div', {
+    paddingTop: '$8',
     display: 'flex',
-    alignContent: 'center',
+    alignItems: 'center',
     justifyContent: 'center',
     gap: '$4',
     width: '100%',

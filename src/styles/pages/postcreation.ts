@@ -27,10 +27,26 @@ export const AddPostToDoContainer = styled('div', {
     width: '100%',
 })
 
-export const AddPostToDo = styled('div', {
+export const HandlerPostToDo = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'space-between',
     width: '100%',
     paddingTop: '$6',
+})
+
+export const ShortcutTaskContainer = styled('div', {
+    padding: '$2',
+    width: '100%',
+    maxHeight: '70vh',
+    overflowY: 'auto',
+    '&::-webkit-scrollbar': {
+        backgroundColor: 'transparent',
+        width: '4px',
+    },
+
+    '&::-webkit-scrollbar-thumb': {
+        backgroundColor: '$muted',
+        borderRadius: '$lg'
+    },
 })
