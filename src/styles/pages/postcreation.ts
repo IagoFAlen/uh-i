@@ -42,7 +42,7 @@ export const ShortcutTaskContainer = styled('div', {
     overflowY: 'auto',
     '&::-webkit-scrollbar': {
         backgroundColor: 'transparent',
-        width: '4px',
+        width: '3px',
     },
 
     '&::-webkit-scrollbar-thumb': {

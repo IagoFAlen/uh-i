@@ -3,16 +3,42 @@ import { PostProps } from "./types"
 import { Avatar, Box, Heading, Text } from "@bertiare-ui/react"
 import { SlOptions } from "react-icons/sl";
 import { PostInteraction } from "./PostInteraction";
+import { PostSettingMenu } from "./PostSettingMenu";
+import { useEffect, useState } from "react";
 
 export function Post(props: PostProps){
+    const [ isMenuOpen, setIsMenuOpen ] = useState(false)
+
+    function toggleMenu(){
+        setIsMenuOpen(!isMenuOpen)
+    }
+
+    const settingConfigs = {
+        mute: false,
+        block: false,
+        hide: false,
+    }
+
+    useEffect(() => {
+        isMenuOpen ? document.body.style.overflow = 'hidden' : document.body.style.overflow = 'auto'
+
+        return () => {
+            document.body.style.overflow = 'auto'
+        }
+
+    }, [isMenuOpen])
+
+
     return(
         <>
             <PostContainer>
                 <Box>
                     <SettingsContainer> {/* onClick={toggleMenu}*/}
-                        <SettingsIcon>
+                        <SettingsIcon onClick={toggleMenu}>
                             <SlOptions />
                         </SettingsIcon>
+                        { isMenuOpen && <PostSettingMenu configs={settingConfigs} toggleMenu={toggleMenu}/> }
+
                     </SettingsContainer>
                     <PostDetails>
                         <ProfileContainer>
