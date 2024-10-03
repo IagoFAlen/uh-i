@@ -7,7 +7,6 @@ export default function Sketch(){
         <>
             <HeaderLayout />
             <LayoutContent>
-                <PostSettingMenu />
             </LayoutContent>
         </>
     )
