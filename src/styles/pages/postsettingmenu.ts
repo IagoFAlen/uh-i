@@ -25,7 +25,7 @@ export const PostSettingSectionContainer = styled('div', {
     justifyContent: 'center',
     flexDirection: 'column',
     width: '100%',
-    borderBottom: '1px solid $muted',
+    borderBottom: '1px solid $mutedInverse',
 })
 
 export const PostSettingContainer = styled('div', {
@@ -39,6 +39,29 @@ export const PostSettingContainer = styled('div', {
 
     '&:hover': {
         background: '$mutedIcon',
+    },
+
+    variants: {
+        color: {
+            danger: {
+                '> h2': {
+                    color: "$danger",
+                },
+
+                '> svg': {
+                    color: "$danger",
+                }
+            }
+        },
+        section: {
+            start: {
+                borderRadius: '$sm $sm 0 0',
+            },
+            end: {
+                borderBottom: '0',
+                borderRadius: '0 0 $sm $sm',
+            }
+        }
     }
 })
 

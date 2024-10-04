@@ -3,6 +3,6 @@ import { styled } from "..";
 export const FeedContainer = styled('div', {
     display: 'flex',
     flexDirection: 'column',
-    gap: '$6',
+    gap: '$5',
     
 })

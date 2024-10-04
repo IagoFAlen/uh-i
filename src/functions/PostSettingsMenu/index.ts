@@ -13,6 +13,7 @@ export type PostSettingActions =
     | { type: 'HIDE_POST' }
     | { type: 'SHOW_POST' }
     | { type: 'REPORT_POST' }
+    | { type: 'DELETE_POST' }
 
 export const initialState: PostSettingMenuState = {
     mutingAccount: false,
@@ -37,6 +38,8 @@ export function postSettingMenuReducer(state: PostSettingMenuState, action: Post
         case 'SHOW_POST':
             return { ...state, hidingPost: false }
         case 'REPORT_POST':
+            return state
+        case 'DELETE_POST':
             return state
         default:
             return state

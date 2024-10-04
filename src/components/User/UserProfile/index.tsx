@@ -4,8 +4,15 @@ import { AccountDetails } from "../AccountDetails";
 import { IoPencil } from "react-icons/io5";
 import { UserTabs } from "../UserTabMenu";
 import { UserProfileProps } from "./types";
+import { useState } from "react";
 
 export function UserProfile(props: UserProfileProps){
+    const [ followage, setFollowage ] = useState<boolean>(false)
+
+    function handleFollowage() {
+        setFollowage(!followage)
+    }
+
     return(
         <>
             <UserProfileContainer>
@@ -30,7 +37,7 @@ export function UserProfile(props: UserProfileProps){
                         {
                             props.variant !== 'personal' && 
                             <>
-                                <Button variant="default">Follow</Button>
+                                { followage ? <Button variant="inverse" onClick={handleFollowage} fit="7rem">Followed</Button> : <Button variant="default" onClick={handleFollowage} fit="7rem">Follow</Button> } 
                             </>
                         }
                     </UserProfileCommunityFollowage>

@@ -1,7 +1,7 @@
 import { ButtonWrapper, FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
 import { MenuProps } from "./types";
 import { Tab } from "./Tab";
-import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople } from "react-icons/md";
+import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople, MdOutlineSettings } from "react-icons/md";
 import { Avatar, Button, Heading, Text } from "@bertiare-ui/react";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
@@ -9,7 +9,7 @@ import { HiOutlinePencilSquare } from "react-icons/hi2";
 import { Navigate } from "@/styles/pages/navigation";
 
 export function Menu(props: MenuProps){
-    const baseTabs = ['home', 'trending', 'explore', 'community', 'write']
+    const baseTabs = ['home', 'trending', 'explore', 'community', 'write', 'settings']
     const router = useRouter()
     const [formatPathName, setFormatPathName] = useState<string>(router.pathname.replace('/', ''))
     const [unfocusedTabs, setUnfocusedTabs] = useState(baseTabs)
@@ -56,9 +56,11 @@ export function Menu(props: MenuProps){
 
     return(
         <>
-            <LogoContainer>
-                <Heading decoration="highlight">UH-I</Heading>
-            </LogoContainer>
+            <Navigate variant="fit" href="/">
+                <LogoContainer>
+                    <Heading decoration="highlight">UH-I</Heading>
+                </LogoContainer>
+            </Navigate>
             <MenuWrapper>
                 <MenuContainer>
                     <MenuSection>
@@ -85,6 +87,11 @@ export function Menu(props: MenuProps){
                         <Navigate variant="fit" href="/write">
                             <Tab title="Write" size="xsmall" variant={focusTab('write')} >
                                 <HiOutlinePencilSquare size={size}/>
+                            </Tab>
+                        </Navigate>
+                        <Navigate variant="fit" href="/settings">
+                            <Tab title="Settings" size="xsmall" variant={focusTab('settings')} >
+                                <MdOutlineSettings size={size}/>
                             </Tab>
                         </Navigate>
                     </MenuSection>

@@ -5,6 +5,7 @@ import { MdOutlineBlock, MdOutlineVisibilityOff, MdOutlineVisibility } from "rea
 import { useReducer, useState } from "react";
 import { initialState, postSettingMenuReducer } from "@/functions/PostSettingsMenu";
 import { PostSettingMenuProps, PostSettingOptionsProps } from "./types";
+import { FaRegTrashCan } from "react-icons/fa6";
 
 
 export function PostSettingMenu(props: PostSettingMenuProps){
@@ -47,11 +48,16 @@ export function PostSettingMenu(props: PostSettingMenuProps){
 
     }
 
+    function handleDeletePost(){
+        dispatch({ type: 'DELETE_POST' })
+        props.toggleMenu()
+    }
+
     return(
         <>
             <PostSettingMenuContainer>
                 <PostSettingSectionContainer>
-                    <PostSettingContainer onClick={ handleCopyPost }>
+                    <PostSettingContainer onClick={ handleCopyPost } section="start">
                         <Heading size="minimum">Copy</Heading>
                         <IoCopyOutline />
                     </PostSettingContainer>
@@ -88,7 +94,7 @@ export function PostSettingMenu(props: PostSettingMenuProps){
                         </>
                     }
                 </PostSettingSectionContainer>
-
+                <PostSettingSectionContainer>
                     { !hide ? 
                         <>
                             <PostSettingContainer onClick={() => { handleHidingPost('HIDE') }}>
@@ -104,10 +110,16 @@ export function PostSettingMenu(props: PostSettingMenuProps){
                         </>
                     }
 
-                <PostSettingContainer onClick={ handleReportPost }>
-                    <Heading size="minimum">Report post</Heading>
-                    <IoFlagOutline />
+                    <PostSettingContainer onClick={ handleReportPost }>
+                        <Heading size="minimum">Report post</Heading>
+                        <IoFlagOutline />
+                    </PostSettingContainer>
+                </PostSettingSectionContainer>
+                <PostSettingContainer color="danger" onClick={ handleDeletePost } section="end">
+                    <Heading size="minimum">Delete post</Heading>
+                    <FaRegTrashCan />
                 </PostSettingContainer>
+
             </PostSettingMenuContainer>
         </>
     )

@@ -57,7 +57,7 @@ export const ContentContainer = styled('div', {
     display: 'flex',
     flexDirection: 'column',
     gap: '$3',
-    paddingBottom: '$4',
+    paddingBottom: '$1',
     cursor: 'pointer',
 
 })

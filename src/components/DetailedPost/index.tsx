@@ -1,4 +1,4 @@
-import { DetailedPostContainer } from "@/styles/detailedpost";
+import { DetailedPostContainer } from "@/styles/pages/detailedpost";
 import { ContentContainer, PostDetails, ProfileContainer, ProfileInfo, SettingsContainer, SettingsIcon, Time } from "@/styles/pages/post";
 import { Avatar, Box, Heading, Text } from "@bertiare-ui/react";
 import { SlOptions } from "react-icons/sl";

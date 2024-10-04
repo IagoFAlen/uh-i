@@ -5,6 +5,8 @@ import { SlOptions } from "react-icons/sl";
 import { PostInteraction } from "./PostInteraction";
 import { PostSettingMenu } from "./PostSettingMenu";
 import { useEffect, useState } from "react";
+import { Tags } from "../Tags";
+import { Navigate } from "@/styles/pages/navigation";
 
 export function Post(props: PostProps){
     const [ isMenuOpen, setIsMenuOpen ] = useState(false)
@@ -53,11 +55,14 @@ export function Post(props: PostProps){
                         </Time>
                     </PostDetails>
 
-                    <ContentContainer>
-                        <Heading size="xsmall">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste ex reprehenderit accusamus?</Heading>
-                        <EllipsisText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio officia eaque, laudantium commodi suscipit provident maiores consectetur ex iure, itaque iusto. Ipsa voluptates molestias molestiae? Ab ut laudantium aliquam.</EllipsisText>
-                    </ContentContainer>
+                    <Navigate href="/uhits/adb938d4e201e922ea39fb7615be4b7f">
+                        <ContentContainer>
+                            <Heading size="xsmall">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod iste ex reprehenderit accusamus?</Heading>
+                            <EllipsisText>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem distinctio officia eaque, laudantium commodi suscipit provident maiores consectetur ex iure, itaque iusto. Ipsa voluptates molestias molestiae? Ab ut laudantium aliquam.</EllipsisText>
+                        </ContentContainer>
+                    </Navigate>
 
+                    <Tags />
                     <PostInteraction />
                 </Box>
             </PostContainer>
