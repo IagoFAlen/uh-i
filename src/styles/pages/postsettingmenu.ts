@@ -11,7 +11,7 @@ export const PostSettingMenuContainer = styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     borderRadius: '$md',
-    boxShadow: 'rgba(0, 0, 0, 0.24) 0px 3px 8px;',
+    boxShadow: 'rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px',
     background: '$background',
     flexDirection: 'column',
     width: '13rem',

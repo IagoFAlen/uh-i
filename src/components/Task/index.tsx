@@ -7,8 +7,8 @@ interface TaskProps {
     isElement?: boolean;
     task: { title: string; content: string };
     onTaskChange: (key: 'title' | 'content', value: string) => void;
-    onRemove: () => void; // Optional for the main task
-    isMainTask?: boolean; // Optional to differentiate between main and additional tasks
+    onRemove: () => void;
+    isMainTask?: boolean;
 }
 
   

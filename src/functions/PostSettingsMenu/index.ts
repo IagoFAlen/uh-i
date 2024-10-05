@@ -1,19 +1,19 @@
 export interface PostSettingMenuState {
-    mutingAccount: boolean
-    blockingAccount: boolean
-    hidingPost: boolean
+    mutingAccount: boolean;
+    blockingAccount: boolean;
+    hidingPost: boolean;
 }
 
+export type ToggleActionType = 
+                                'mutingAccount'
+                            |   'blockingAccount'
+                            |   'hidingPost'
+                            
 export type PostSettingActions =
-    | { type: 'COPY_POST' }
-    | { type: 'MUTE_ACCOUNT' }
-    | { type: 'UNMUTE_ACCOUNT' }
-    | { type: 'BLOCK_ACCOUNT' }
-    | { type: 'UNBLOCK_ACCOUNT' }
-    | { type: 'HIDE_POST' }
-    | { type: 'SHOW_POST' }
-    | { type: 'REPORT_POST' }
-    | { type: 'DELETE_POST' }
+                            | { type: 'COPY_POST' }
+                            | { type: 'REPORT_POST' }
+                            | { type: 'DELETE_POST' }
+                            | { type: 'TOGGLE_STATE', field: ToggleActionType, value: boolean }
 
 export const initialState: PostSettingMenuState = {
     mutingAccount: false,
@@ -21,27 +21,17 @@ export const initialState: PostSettingMenuState = {
     hidingPost: false,
 }
 
-export function postSettingMenuReducer(state: PostSettingMenuState, action: PostSettingActions){
-    switch(action.type){
+export function postSettingMenuReducer(state: PostSettingMenuState, action: PostSettingActions): PostSettingMenuState{
+    switch (action.type) {
         case 'COPY_POST':
             return state
-        case 'MUTE_ACCOUNT':
-            return { ...state, mutingAccount: true }
-        case 'UNMUTE_ACCOUNT':
-            return { ...state, mutingAccount: false }
-        case 'BLOCK_ACCOUNT':
-            return { ...state, blockingAccount: true }
-        case 'UNBLOCK_ACCOUNT':
-            return { ...state, blockingAccount: false }
-        case 'HIDE_POST':
-            return { ...state, hidingPost: true }
-        case 'SHOW_POST':
-            return { ...state, hidingPost: false }
         case 'REPORT_POST':
             return state
         case 'DELETE_POST':
-            return state
+            return state; 
+        case 'TOGGLE_STATE':
+            return { ...state, [action.field]: action.value };
         default:
-            return state
+            return state;
     }
 }

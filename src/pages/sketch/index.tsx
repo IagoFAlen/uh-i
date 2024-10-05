@@ -1,4 +1,4 @@
-import { PostSettingMenu } from "@/components/Post/PostSettingMenu";
+import { Dialog } from "@/layout/Dialog";
 import { HeaderLayout } from "@/layout/Header";
 import { LayoutContent } from "@/styles/pages/layout";
 

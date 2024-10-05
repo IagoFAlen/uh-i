@@ -1,0 +1,43 @@
+import { styled } from "..";
+
+export const DialogContainer = styled('div', {
+    position: 'fixed',
+    top: '0px',
+    right: '0px',
+    height: '100%',
+    width: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    backgroundColor: '$opacityBackground',
+    zIndex: '1',
+})
+
+export const DialogBox = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    gap: '$2',
+    padding: '$4',
+    width: '40rem',
+    background: '$background',
+    border: '1px solid $mutedInverse',
+    borderRadius: '$sm',
+})
+
+export const CloseContainerWrapper = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-end',
+    width: '100%',
+})
+
+export const CloseContainer = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    gap: '$1',
+    padding: '0 $4',
+    cursor: 'pointer',
+})
