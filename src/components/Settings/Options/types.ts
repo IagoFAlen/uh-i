@@ -3,7 +3,7 @@ import { SettingOptionDialogWrapper } from "@/styles/pages/settings";
 import { ComponentProps } from "react";
 
 export interface OptionsProps extends ComponentProps<typeof SettingOptionDialogWrapper> {
-    size: number,
+    size?: number,
     isDialogOpen: boolean,
     handleDialogToggle: (dialog: DialogType, isDialogOpen: boolean) => void
 }

@@ -4,7 +4,8 @@ export interface SettingState {
     isChangePhoneOpen: boolean,
     isDeactivateAccountOpen: boolean,
     isDeleteAccountOpen: boolean,
-    is2FAOpen: boolean
+    is2FAOpen: boolean,
+    isAccountDetailsOpen: boolean
 }
 
 export type DialogType = 
@@ -13,7 +14,8 @@ export type DialogType =
     | 'isChangePhoneOpen'
     | 'isDeactivateAccountOpen'
     | 'isDeleteAccountOpen'
-    | 'is2FAOpen';
+    | 'is2FAOpen'
+    | 'isAccountDetailsOpen';
 
 export type SettingActions = 
     | { type: 'OPEN_DIALOG', dialog: DialogType }
@@ -25,7 +27,8 @@ export const initialState: SettingState = {
     isChangePhoneOpen: false,
     isDeactivateAccountOpen: false,
     isDeleteAccountOpen: false,
-    is2FAOpen: false
+    is2FAOpen: false,
+    isAccountDetailsOpen: false
 };
 
 export function settingDialogsReducer(state: SettingState, action: SettingActions): SettingState {

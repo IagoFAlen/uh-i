@@ -4,13 +4,21 @@ import { AccountDetails } from "../AccountDetails";
 import { IoPencil } from "react-icons/io5";
 import { UserTabs } from "../UserTabMenu";
 import { UserProfileProps } from "./types";
-import { useState } from "react";
+import { useReducer, useState } from "react";
+import { DialogType, initialState, settingDialogsReducer } from "@/functions/Settings";
+import { AccountDetailsChange } from "@/components/Settings/AccountDetailsChange";
 
 export function UserProfile(props: UserProfileProps){
     const [ followage, setFollowage ] = useState<boolean>(false)
+    const [state, dispatch] = useReducer(settingDialogsReducer, initialState);
+    const { isAccountDetailsOpen } = state;
 
     function handleFollowage() {
         setFollowage(!followage)
+    }
+    
+    const handleDialogToggle = (dialog: DialogType, isOpen: boolean) => {
+        dispatch({ type: isOpen ? 'CLOSE_DIALOG' : 'OPEN_DIALOG', dialog });
     }
 
     return(
@@ -19,11 +27,7 @@ export function UserProfile(props: UserProfileProps){
                 <Box>
                     { props.variant === 'personal' && 
                         <>
-                            <EditUserInfoContainer>
-                                <EditUserInfo>
-                                    <IoPencil />
-                                </EditUserInfo>
-                            </EditUserInfoContainer>
+                            <AccountDetailsChange handleDialogToggle={ () => handleDialogToggle('isAccountDetailsOpen', isAccountDetailsOpen) } isDialogOpen={ isAccountDetailsOpen } />
                         </>
                     }
                     <UserProfileCommunityFollowage>
