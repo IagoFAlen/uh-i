@@ -4,10 +4,12 @@ import { SettingOption } from "../../SettingOption";
 import { MdLockOutline } from "react-icons/md";
 import { Dialog } from "@/layout/Dialog";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
-import { ChangePasswordContainer, ChangePasswordHeadingWrapper, ChangePasswordLabel } from "@/styles/pages/changepassword";
 import { RiLockPasswordFill } from "react-icons/ri";
+import { ChangePasswordContainer, ChangePasswordHeadingWrapper, ChangePasswordLabel } from "@/styles/pages/dialog/changepassword";
 
 export function ChangePassword(props: OptionsProps){
+    const dialogSize = 48
+
     return(
         <>
             <SettingOptionDialogWrapper>
@@ -16,9 +18,9 @@ export function ChangePassword(props: OptionsProps){
                 </SettingOption>
                 <Dialog isOpen={ props.isDialogOpen } close={() => props.handleDialogToggle('isChangePasswordOpen', props.isDialogOpen )} >
                     <ChangePasswordContainer>
-                        <RiLockPasswordFill size={48}/>
-                        <Heading size="small">Change password request</Heading>
-                        <Text>Hi, seems you want to change your password. You can do it over here:</Text>
+                        <RiLockPasswordFill size={dialogSize}/>
+                        <Heading size="small">Change password</Heading>
+                        <Text>Hi, seems you want to change your password. You can do it here:</Text>
                         <ChangePasswordLabel>
                             <ChangePasswordHeadingWrapper>
                                 <Heading size="minimum">Password</Heading>

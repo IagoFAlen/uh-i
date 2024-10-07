@@ -20,6 +20,15 @@ export const WriteLabel = styled('label', {
     width: '100%',
 })
 
+export const WriteSectionTitleWrapper = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    width: '100%',
+    padding: '$2 0',
+
+})
+
 export const WriteHeadingWrapper = styled('div', {
     display: 'flex',
     alignItems: 'center',

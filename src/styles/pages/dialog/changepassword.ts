@@ -1,4 +1,4 @@
-import { styled } from "..";
+import { styled } from "@/styles"
 
 export const ChangePasswordContainer = styled('form', {
     display: 'flex',
@@ -20,5 +20,5 @@ export const ChangePasswordLabel = styled('label', {
 })
 
 export const ChangePasswordHeadingWrapper = styled('div', {
-    padding: '$2 $4',
+    padding: '$1 $4',
 })

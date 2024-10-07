@@ -9,8 +9,9 @@ export const DialogContainer = styled('div', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '$opacityBackground',
+    background: '$opacityBackground',
     zIndex: '1',
+
 })
 
 export const DialogBox = styled('div', {
@@ -23,7 +24,12 @@ export const DialogBox = styled('div', {
     width: '40rem',
     background: '$background',
     border: '1px solid $mutedInverse',
-    borderRadius: '$sm',
+    borderRadius: '$md',
+    transition: 'all 0.5s ease-in-out',
+
+    '&:hover': {
+        background: '$hoverDepth',
+    }
 })
 
 export const CloseContainerWrapper = styled('div', {
