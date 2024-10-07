@@ -26,7 +26,7 @@ export function DeleteAccount(props: OptionsProps){
                             <DeleteAccountHeadingWrapper>
                                 <Heading size="minimum">Confirm password</Heading>
                             </DeleteAccountHeadingWrapper>
-                            <Input placeholder="Type your password" fit="100%"/>
+                            <Input placeholder="Type your password" type="password" fit="100%"/>
                         </DeleteAccountLabel>
                         <DestructiveActionConfirmation>
                             <Text weight="bold">Are you sure you want to delete your account?</Text>

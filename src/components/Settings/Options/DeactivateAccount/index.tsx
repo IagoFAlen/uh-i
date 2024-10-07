@@ -25,7 +25,7 @@ export function DeactivateAccount(props: OptionsProps){
                             <DeactivateAccountHeadingWrapper>
                                 <Heading size="minimum">Confirm password</Heading>
                             </DeactivateAccountHeadingWrapper>
-                            <Input placeholder="Type your password" fit="100%"/>
+                            <Input placeholder="Type your password" type="password" fit="100%"/>
                         </DeactivateAccountLabel>
                         <DestructiveActionConfirmation>
                             <Text weight="bold">Are you sure you want to deactivate your account?</Text>
