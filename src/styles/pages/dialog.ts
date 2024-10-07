@@ -31,6 +31,7 @@ export const CloseContainerWrapper = styled('div', {
     alignItems: 'center',
     justifyContent: 'flex-end',
     width: '100%',
+    padding: '$4 0',
 })
 
 export const CloseContainer = styled('div', {
