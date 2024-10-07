@@ -27,7 +27,7 @@ export function ChangePassword(props: OptionsProps){
                         </ChangePasswordLabel>
                         <ChangePasswordLabel>
                             <ChangePasswordHeadingWrapper>
-                                <Heading size="minimum">Password</Heading>
+                                <Heading size="minimum">New password</Heading>
                             </ChangePasswordHeadingWrapper>
                             <Input placeholder="Type new password" type="password" fit="100%"/>
                         </ChangePasswordLabel>
