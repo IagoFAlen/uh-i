@@ -6,8 +6,18 @@ export const RegisterForm = styled('form', {
     justifyContent: 'center',
     flexDirection: 'column',
     width: '100%',
-    gap: '$4',
+    gap: '$8',
     padding: '$4',
+})
+
+export const RegisterLabelsWrapper = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    gap: '$4',
+    
 })
 
 export const RegisterLabel = styled('label', {
@@ -15,7 +25,6 @@ export const RegisterLabel = styled('label', {
     alignItems: 'flex-start',
     justifyContent: 'center',
     flexDirection: 'column',
-    gap: '$1',
     width: '100%',
 
 })
@@ -23,8 +32,7 @@ export const RegisterLabel = styled('label', {
 export const RegisterTitleLabelWrapper = styled('div', {
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'flex-start',
-    gap: '$4',
+    justifyContent: 'space-between',
     padding: '0 $4',
 })
 
@@ -41,5 +49,21 @@ export const RegisterButtonWrapper = styled('div', {
     alignItems: 'center',
     justifyContent: 'center',
     width: '100%',
-    padding: '$4 0',
+    padding: '0',
+})
+
+export const RegisterInputWrapper = styled('div', {
+    display: 'flex',
+    alignItems: 'flex-start',
+    justifyContent: 'center',
+    flexDirection: 'column',
+    width: '100%',
+    gap: '$2',
+})
+
+export const MatchingErrors = styled('div', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    padding: '$2 $4 0',
 })
