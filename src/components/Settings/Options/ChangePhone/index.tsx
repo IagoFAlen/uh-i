@@ -23,7 +23,7 @@ const formSchema = z.object({
 type FormDataTypes = z.infer<typeof formSchema>
 
 export function ChangePhone(props: OptionsProps){
-    const { register, handleSubmit, formState: { errors, isSubmitting, isValid }, reset } = useForm<FormDataTypes>({
+    const { register, handleSubmit, formState: { errors, isSubmitting, isValid } } = useForm<FormDataTypes>({
         resolver: zodResolver(formSchema),
         mode: "onChange",
     })

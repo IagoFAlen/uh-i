@@ -21,7 +21,7 @@ const formSchema = z.object({
 type FormDataTypes = z.infer<typeof formSchema>
 
 export function AccountDetailsChange(props: OptionsProps){
-    const { register, handleSubmit, formState: { errors, isSubmitting, isValid }, reset } = useForm<FormDataTypes>({
+    const { register, handleSubmit, formState: { errors, isSubmitting, isValid } } = useForm<FormDataTypes>({
         resolver: zodResolver(formSchema),
         mode: "onChange",
     })
