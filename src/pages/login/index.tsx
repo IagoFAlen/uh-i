@@ -1,6 +1,7 @@
 import { HeaderLayout } from "@/layout/Header";
+import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
 import { LayoutContent } from "@/styles/pages/layout";
-import { MatchingErrors, RegisterButtonWrapper, RegisterForm, RegisterHeadingLabelWrapper, RegisterInputWrapper, RegisterLabel, RegisterLabelsWrapper, RegisterTitleLabelWrapper } from "@/styles/pages/register";
+import { RegisterButtonWrapper, RegisterForm, RegisterHeadingLabelWrapper, RegisterLabel, RegisterLabelsWrapper, RegisterTitleLabelWrapper } from "@/styles/pages/register";
 import { Box, Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -20,8 +21,9 @@ const formSchema = z.object({
 type FormDataTypes = z.infer<typeof formSchema>
 
 export default function Login() {
-    const { register, handleSubmit, formState: { errors, isSubmitting }, reset } = useForm<FormDataTypes>({
+    const { register, handleSubmit, formState: { errors, isSubmitting, isValid }, reset } = useForm<FormDataTypes>({
         resolver: zodResolver(formSchema),
+        mode: "onChange",
     })
 
 
@@ -53,8 +55,8 @@ export default function Login() {
                                     <LuUser size={iconSize} />
                                     <Heading size="minimum">Username</Heading>
                                 </RegisterHeadingLabelWrapper>
-                                <RegisterInputWrapper>
-                                    <Input placeholder="Type your username" fit="100%" type="text" id="username" {...register('username')} color={errors.username && "danger"} />
+                                <OptionInputWrapper>
+                                    <Input placeholder="Type your username" fit="100%" type="text" id="username" {...register('username')} color={errors.username && "danger" || isValid && "success" } />
                                     {errors.username &&
                                         (
                                             <>
@@ -64,15 +66,15 @@ export default function Login() {
                                             </>
                                         )
                                     }
-                                </RegisterInputWrapper>
+                                </OptionInputWrapper>
                             </RegisterLabel>
                             <RegisterLabel htmlFor="password">
                                 <RegisterHeadingLabelWrapper>
                                     <MdOutlinePassword size={iconSize} />
                                     <Heading size="minimum">Password</Heading>
                                 </RegisterHeadingLabelWrapper>
-                                <RegisterInputWrapper>
-                                    <Input placeholder="Type your password" fit="100%" type="password" id="password" {...register('password')} color={errors.password && "danger"} />
+                                <OptionInputWrapper>
+                                    <Input placeholder="Type your password" fit="100%" type="password" id="password" {...register('password')} color={errors.password && "danger" || isValid && "success" } />
                                     {errors.password &&
                                         (
                                             <>
@@ -82,7 +84,7 @@ export default function Login() {
                                             </>
                                         )
                                     }
-                                </RegisterInputWrapper>
+                                </OptionInputWrapper>
                             </RegisterLabel>
                         </RegisterLabelsWrapper>
                         <RegisterButtonWrapper>

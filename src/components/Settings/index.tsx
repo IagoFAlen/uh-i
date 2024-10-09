@@ -47,6 +47,7 @@ export function SettingMenu(){
 
     const sectionIconSize = 26
     const size = 24
+    const dialogIconSize = 48
 
     return(
         <>
@@ -58,11 +59,11 @@ export function SettingMenu(){
                             <Heading size="small">Account</Heading>
                         </SettingSectionHeading>
                         <SettingOptionWrapper>
-                            <Notifications size={size} handleDialogToggle={ () => handleDialogToggle('isNotificationsOpen', isNotificationsOpen) } isDialogOpen={ isNotificationsOpen }/>
-                            <ChangePassword size={size} handleDialogToggle={ () => handleDialogToggle('isChangePasswordOpen', isChangePasswordOpen) } isDialogOpen={ isChangePasswordOpen }/>
-                            <ChangePhone size={size} handleDialogToggle={ () => handleDialogToggle('isChangePhoneOpen', isChangePhoneOpen) } isDialogOpen={ isChangePhoneOpen }/>
-                            <DeactivateAccount size={size} handleDialogToggle={ () => handleDialogToggle('isDeactivateAccountOpen', isDeactivateAccountOpen) } isDialogOpen={ isDeactivateAccountOpen }/>
-                            <DeleteAccount size={size} handleDialogToggle={ () => handleDialogToggle('isDeleteAccountOpen', isDeleteAccountOpen) } isDialogOpen={ isDeleteAccountOpen }/>
+                            <Notifications dialogIconSize={dialogIconSize} size={size} handleDialogToggle={ () => handleDialogToggle('isNotificationsOpen', isNotificationsOpen) } isDialogOpen={ isNotificationsOpen }/>
+                            <ChangePassword dialogIconSize={dialogIconSize} size={size} handleDialogToggle={ () => handleDialogToggle('isChangePasswordOpen', isChangePasswordOpen) } isDialogOpen={ isChangePasswordOpen }/>
+                            <ChangePhone dialogIconSize={dialogIconSize} size={size} handleDialogToggle={ () => handleDialogToggle('isChangePhoneOpen', isChangePhoneOpen) } isDialogOpen={ isChangePhoneOpen }/>
+                            <DeactivateAccount dialogIconSize={dialogIconSize} size={size} handleDialogToggle={ () => handleDialogToggle('isDeactivateAccountOpen', isDeactivateAccountOpen) } isDialogOpen={ isDeactivateAccountOpen }/>
+                            <DeleteAccount dialogIconSize={dialogIconSize} size={size} handleDialogToggle={ () => handleDialogToggle('isDeleteAccountOpen', isDeleteAccountOpen) } isDialogOpen={ isDeleteAccountOpen }/>
                         </SettingOptionWrapper>
                     </SettingSection>
                 </Box>
@@ -92,7 +93,7 @@ export function SettingMenu(){
                             <Heading size="small">Security</Heading>
                         </SettingSectionHeading>
                         <SettingOptionWrapper>
-                            <TFA size={size} handleDialogToggle={ () => handleDialogToggle('is2FAOpen', is2FAOpen) } isDialogOpen={ is2FAOpen }/>
+                            <TFA dialogIconSize={dialogIconSize} size={size} handleDialogToggle={ () => handleDialogToggle('is2FAOpen', is2FAOpen) } isDialogOpen={ is2FAOpen }/>
                         </SettingOptionWrapper>
                     </SettingSection>
                 </Box>

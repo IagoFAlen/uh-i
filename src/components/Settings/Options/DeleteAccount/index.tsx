@@ -5,9 +5,33 @@ import { Dialog } from "@/layout/Dialog";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { DangerActionWarning, DeleteAccountContainer, DeleteAccountHeadingWrapper, DeleteAccountLabel, DeleteAccountOptions, DestructiveActionConfirmation } from "@/styles/pages/dialog/deleteaccount";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+
+const formSchema = z.object({
+    password: z.string().min(1, 'Password is required')
+})
+
+type FormDataTypes = z.infer<typeof formSchema>
 
 export function DeleteAccount(props: OptionsProps){
-    const dialogSize = 48
+
+    const { register, handleSubmit, formState: { errors, isSubmitting, isValid }, reset } = useForm<FormDataTypes>({
+        resolver: zodResolver(formSchema),
+        mode: "onChange",
+    })
+
+    async function handleDeleteAccount(data: FormDataTypes){
+        try{
+            console.log('Deactivate Account call', data)
+
+        }catch(error){
+
+        }
+    }
+
 
     return(
         <>
@@ -16,9 +40,9 @@ export function DeleteAccount(props: OptionsProps){
                     <FaRegTrashCan size={props.size} />                                
                 </SettingOption>
                 <Dialog isOpen={ props.isDialogOpen } close={() => props.handleDialogToggle('isDeleteAccountOpen', props.isDialogOpen )}>
-                <DeleteAccountContainer>
+                <DeleteAccountContainer onSubmit={ handleSubmit(handleDeleteAccount) } action="">
                         <DangerActionWarning color="danger" >
-                            <FaRegTrashCan size={dialogSize}/>
+                            <FaRegTrashCan size={ props.dialogIconSize }/>
                             <Heading size="small">Delete account</Heading>
                             <Text>Hi, seems you're requesting a destructive action, be careful! This action can't be undone.</Text>
                         </DangerActionWarning>
@@ -26,13 +50,24 @@ export function DeleteAccount(props: OptionsProps){
                             <DeleteAccountHeadingWrapper>
                                 <Heading size="minimum">Confirm password</Heading>
                             </DeleteAccountHeadingWrapper>
-                            <Input placeholder="Type your password" type="password" fit="100%"/>
+                            <OptionInputWrapper>
+                                <Input placeholder="Type your password" type="password" fit="100%" {...register('password')} color={ errors.password && "danger" || isValid && "success" } />
+                                {errors.password &&
+                                    (
+                                        <>
+                                            <MatchingErrors>
+                                                <Text size="xsmall" color="danger">{errors.password.message}</Text>
+                                            </MatchingErrors>
+                                        </>
+                                    )
+                                }
+                            </OptionInputWrapper>
                         </DeleteAccountLabel>
                         <DestructiveActionConfirmation>
                             <Text weight="bold">Are you sure you want to delete your account?</Text>
                             <DeleteAccountOptions>
-                                <Button variant="danger" fit="100%">Discard</Button>
-                                <Button variant="default" fit="100%">Confirm</Button>
+                                <Button variant="danger" type="button" fit="100%">Discard</Button>
+                                <Button variant="default" type="submit" fit="100%">Confirm</Button>
                             </DeleteAccountOptions>
                         </DestructiveActionConfirmation>
                     </DeleteAccountContainer>

@@ -5,5 +5,6 @@ import { ComponentProps } from "react";
 export interface OptionsProps extends ComponentProps<typeof SettingOptionDialogWrapper> {
     size?: number,
     isDialogOpen: boolean,
+    dialogIconSize?: number, 
     handleDialogToggle: (dialog: DialogType, isDialogOpen: boolean) => void
 }

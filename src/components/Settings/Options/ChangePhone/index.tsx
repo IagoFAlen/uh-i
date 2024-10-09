@@ -6,9 +6,34 @@ import { Dialog } from "@/layout/Dialog";
 import { ChangePhoneContainer, ChangePhoneHeadingWrapper, ChangePhoneLabel } from "@/styles/pages/dialog/changephone";
 import { RiPhoneFill } from "react-icons/ri";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
+import { z } from "zod";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+
+const phoneRegex = new RegExp(
+    /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
+)
+
+const formSchema = z.object({
+    phone: z.string().regex(phoneRegex, 'Invalid phone number'),
+})
+
+type FormDataTypes = z.infer<typeof formSchema>
 
 export function ChangePhone(props: OptionsProps){
-    const dialogSize = 48
+    const { register, handleSubmit, formState: { errors, isSubmitting, isValid }, reset } = useForm<FormDataTypes>({
+        resolver: zodResolver(formSchema),
+        mode: "onChange",
+    })
+    
+    async function handleChangePhone(data: FormDataTypes){
+        try{
+            console.log('Change Phone call', data)
+        }catch(error){
+            console.error(error)
+        }
+    }
 
     return(
         <>
@@ -17,17 +42,28 @@ export function ChangePhone(props: OptionsProps){
                     <MdOutlinePhoneEnabled size={props.size} />                                
                 </SettingOption>
                 <Dialog isOpen={ props.isDialogOpen } close={() => props.handleDialogToggle('isChangePhoneOpen', props.isDialogOpen )}>
-                    <ChangePhoneContainer>
-                        <RiPhoneFill size={dialogSize}/>
+                    <ChangePhoneContainer onSubmit={handleSubmit(handleChangePhone)} action="">
+                        <RiPhoneFill size={ props.dialogIconSize }/>
                         <Heading size="small">Change phone</Heading>
                         <Text>Hi, seems you want to change your phone. You can do it over here:</Text>
                         <ChangePhoneLabel>
                             <ChangePhoneHeadingWrapper>
                                 <Heading size="minimum">Phone</Heading>
                             </ChangePhoneHeadingWrapper>
-                            <Input placeholder="Type your new phone over here" type="password" fit="100%" />
+                            <OptionInputWrapper>
+                                <Input placeholder="Type your new phone over here" type="tel" fit="100%" {...register('phone')} color={ errors.phone && "danger" || isValid && "success" } />
+                                {errors.phone &&
+                                    (
+                                        <>
+                                            <MatchingErrors>
+                                                <Text size="xsmall" color="danger">{errors.phone.message}</Text>
+                                            </MatchingErrors>
+                                        </>
+                                    )
+                                }
+                            </OptionInputWrapper>
                         </ChangePhoneLabel>
-                        <Button variant="default" fit="100%">Confirm</Button>
+                        <Button variant="default" type="submit" fit="100%">Confirm</Button>
                     </ChangePhoneContainer>
                 </Dialog>
             </SettingOptionDialogWrapper>
