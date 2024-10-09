@@ -1,15 +1,15 @@
 import { SettingOptionDialogWrapper } from "@/styles/pages/settings";
 import { OptionsProps } from "../types";
 import { SettingOption } from "../../SettingOption";
-import { MdLockOutline } from "react-icons/md";
+import { MdLockOutline, MdOutlinePassword } from "react-icons/md";
 import { Dialog } from "@/layout/Dialog";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { RiLockPasswordFill } from "react-icons/ri";
-import { ChangePasswordContainer, ChangePasswordHeadingWrapper, ChangePasswordLabel } from "@/styles/pages/dialog/changepassword";
+import { ChangePasswordContainer, ChangePasswordLabel } from "@/styles/pages/dialog/changepassword";
 import { z } from "zod"
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
 
 const formSchema = z.object({
     password: z.string().min(1, 'Password is required'),
@@ -42,7 +42,8 @@ export function ChangePassword(props: OptionsProps){
     }
 
     const dialogSize = 48
-
+    const iconSize = 14
+    
     return(
         <>
             <SettingOptionDialogWrapper>
@@ -55,9 +56,10 @@ export function ChangePassword(props: OptionsProps){
                         <Heading size="small">Change password</Heading>
                         <Text>Hi, seems you want to change your password. You can do it here:</Text>
                         <ChangePasswordLabel>
-                            <ChangePasswordHeadingWrapper>
+                            <OptionHeadingLabelWrapper>
+                                <MdOutlinePassword size={iconSize} />
                                 <Heading size="minimum">Password</Heading>
-                            </ChangePasswordHeadingWrapper>
+                            </OptionHeadingLabelWrapper>
                             <OptionInputWrapper>
                                 <Input placeholder="Type your password" type="password" fit="100%" {...register('password')} color={ errors.password && "danger" || isValid && "success" }/>
                                 {errors.password &&
@@ -72,9 +74,10 @@ export function ChangePassword(props: OptionsProps){
                             </OptionInputWrapper>
                         </ChangePasswordLabel>
                         <ChangePasswordLabel>
-                            <ChangePasswordHeadingWrapper>
+                        <OptionHeadingLabelWrapper>
+                                <MdOutlinePassword size={iconSize} />
                                 <Heading size="minimum">New password</Heading>
-                            </ChangePasswordHeadingWrapper>
+                            </OptionHeadingLabelWrapper>
                             <OptionInputWrapper>
                                 <Input placeholder="Type new password" type="password" fit="100%" {...register('newPassword')} color={ errors.newPassword && "danger" || isValid && "success" }/>
                                 {errors.newPassword &&
@@ -89,9 +92,10 @@ export function ChangePassword(props: OptionsProps){
                             </OptionInputWrapper>
                         </ChangePasswordLabel>
                         <ChangePasswordLabel>
-                            <ChangePasswordHeadingWrapper>
+                            <OptionHeadingLabelWrapper>
+                                <MdOutlinePassword size={iconSize} />
                                 <Heading size="minimum">Confirm new password</Heading>
-                            </ChangePasswordHeadingWrapper>
+                            </OptionHeadingLabelWrapper>
                             <OptionInputWrapper>
                                 <Input placeholder="Type new password again" type="password" fit="100%" {...register('confirmNewPassword')} color={ errors.confirmNewPassword && "danger" || isValid && "success" }/>
                                 {errors.confirmNewPassword &&

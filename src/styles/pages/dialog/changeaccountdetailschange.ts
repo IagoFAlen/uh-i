@@ -18,10 +18,6 @@ export const AccountDetailsLabel = styled('label', {
     width: '100%',
 })
 
-export const AccountDetailsHeadingWrapper = styled('div', {
-    padding: '$1 $4',
-})
-
 export const AccountDetailsButtonWrapper = styled('div', {
     width: '100%',
     padding: '$4 0',

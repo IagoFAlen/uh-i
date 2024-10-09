@@ -1,7 +1,7 @@
 import { HeaderLayout } from "@/layout/Header";
-import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
 import { LayoutContent } from "@/styles/pages/layout";
-import { RegisterButtonWrapper, RegisterForm, RegisterHeadingLabelWrapper, RegisterLabel, RegisterLabelsWrapper, RegisterTitleLabelWrapper } from "@/styles/pages/register";
+import { LoginButtonWrapper, LoginForm, LoginLabel, LoginLabelsWrapper, LoginTitleLabelWrapper } from "@/styles/pages/login";
 import { Box, Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -44,17 +44,17 @@ export default function Login() {
             <HeaderLayout />
             <LayoutContent>
                 <Box fit="40rem">
-                    <RegisterTitleLabelWrapper>
+                    <LoginTitleLabelWrapper>
                         <Heading size="medium" decoration="highlight">Sign-In</Heading>
                         <IoCreateOutline size={sectionSize} />
-                    </RegisterTitleLabelWrapper>
-                    <RegisterForm onSubmit={handleSubmit(handleSignIn)} action="">
-                        <RegisterLabelsWrapper>
-                            <RegisterLabel htmlFor="username">
-                                <RegisterHeadingLabelWrapper>
+                    </LoginTitleLabelWrapper>
+                    <LoginForm onSubmit={handleSubmit(handleSignIn)} action="">
+                        <LoginLabelsWrapper>
+                            <LoginLabel htmlFor="username">
+                                <OptionHeadingLabelWrapper>
                                     <LuUser size={iconSize} />
                                     <Heading size="minimum">Username</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your username" fit="100%" type="text" id="username" {...register('username')} color={errors.username && "danger" || isValid && "success" } />
                                     {errors.username &&
@@ -67,12 +67,12 @@ export default function Login() {
                                         )
                                     }
                                 </OptionInputWrapper>
-                            </RegisterLabel>
-                            <RegisterLabel htmlFor="password">
-                                <RegisterHeadingLabelWrapper>
+                            </LoginLabel>
+                            <LoginLabel htmlFor="password">
+                                <OptionHeadingLabelWrapper>
                                     <MdOutlinePassword size={iconSize} />
                                     <Heading size="minimum">Password</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your password" fit="100%" type="password" id="password" {...register('password')} color={errors.password && "danger" || isValid && "success" } />
                                     {errors.password &&
@@ -85,12 +85,12 @@ export default function Login() {
                                         )
                                     }
                                 </OptionInputWrapper>
-                            </RegisterLabel>
-                        </RegisterLabelsWrapper>
-                        <RegisterButtonWrapper>
+                            </LoginLabel>
+                        </LoginLabelsWrapper>
+                        <LoginButtonWrapper>
                             <Button variant="default" fit="100%" type="submit" disabled={isSubmitting}>Login</Button>
-                        </RegisterButtonWrapper>
-                    </RegisterForm>
+                        </LoginButtonWrapper>
+                    </LoginForm>
                 </Box>
             </LayoutContent>
         </>

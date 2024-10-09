@@ -18,7 +18,3 @@ export const ChangePhoneLabel = styled('label', {
     width: '100%',
     gap: '$1',
 })
-
-export const ChangePhoneHeadingWrapper = styled('div', {
-    padding: '$1 $4',
-})

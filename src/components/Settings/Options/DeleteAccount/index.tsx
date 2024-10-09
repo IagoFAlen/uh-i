@@ -4,11 +4,12 @@ import { SettingOption } from "../../SettingOption";
 import { Dialog } from "@/layout/Dialog";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
-import { DangerActionWarning, DeleteAccountContainer, DeleteAccountHeadingWrapper, DeleteAccountLabel, DeleteAccountOptions, DestructiveActionConfirmation } from "@/styles/pages/dialog/deleteaccount";
+import { DangerActionWarning, DeleteAccountContainer, DeleteAccountLabel, DeleteAccountOptions, DestructiveActionConfirmation } from "@/styles/pages/dialog/deleteaccount";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { z } from "zod";
-import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
+import { MdOutlinePassword } from "react-icons/md";
 
 const formSchema = z.object({
     password: z.string().min(1, 'Password is required')
@@ -32,6 +33,7 @@ export function DeleteAccount(props: OptionsProps){
         }
     }
 
+    const iconSize = 14
 
     return(
         <>
@@ -47,9 +49,10 @@ export function DeleteAccount(props: OptionsProps){
                             <Text>Hi, seems you're requesting a destructive action, be careful! This action can't be undone.</Text>
                         </DangerActionWarning>
                         <DeleteAccountLabel>
-                            <DeleteAccountHeadingWrapper>
-                                <Heading size="minimum">Confirm password</Heading>
-                            </DeleteAccountHeadingWrapper>
+                            <OptionHeadingLabelWrapper>
+                                <MdOutlinePassword size={iconSize} />
+                                <Heading size="minimum">Password</Heading>
+                            </OptionHeadingLabelWrapper>
                             <OptionInputWrapper>
                                 <Input placeholder="Type your password" type="password" fit="100%" {...register('password')} color={ errors.password && "danger" || isValid && "success" } />
                                 {errors.password &&
@@ -66,7 +69,7 @@ export function DeleteAccount(props: OptionsProps){
                         <DestructiveActionConfirmation>
                             <Text weight="bold">Are you sure you want to delete your account?</Text>
                             <DeleteAccountOptions>
-                                <Button variant="danger" type="button" fit="100%">Discard</Button>
+                                <Button variant="danger" type="button" fit="100%" onClick={() => props.handleDialogToggle('isDeleteAccountOpen', props.isDialogOpen)} >Discard</Button>
                                 <Button variant="default" type="submit" fit="100%">Confirm</Button>
                             </DeleteAccountOptions>
                         </DestructiveActionConfirmation>

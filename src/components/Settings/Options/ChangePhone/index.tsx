@@ -3,13 +3,14 @@ import { OptionsProps } from "../types";
 import { SettingOption } from "../../SettingOption";
 import { MdOutlinePhoneEnabled } from "react-icons/md";
 import { Dialog } from "@/layout/Dialog";
-import { ChangePhoneContainer, ChangePhoneHeadingWrapper, ChangePhoneLabel } from "@/styles/pages/dialog/changephone";
+import { ChangePhoneContainer, ChangePhoneLabel } from "@/styles/pages/dialog/changephone";
 import { RiPhoneFill } from "react-icons/ri";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { z } from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
+import { LuSmartphone } from "react-icons/lu";
 
 const phoneRegex = new RegExp(
     /^([+]?[\s0-9]+)?(\d{3}|[(]?[0-9]+[)])?([-]?[\s]?[0-9])+$/
@@ -35,6 +36,8 @@ export function ChangePhone(props: OptionsProps){
         }
     }
 
+    const iconSize = 14
+
     return(
         <>
             <SettingOptionDialogWrapper>
@@ -47,9 +50,10 @@ export function ChangePhone(props: OptionsProps){
                         <Heading size="small">Change phone</Heading>
                         <Text>Hi, seems you want to change your phone. You can do it over here:</Text>
                         <ChangePhoneLabel>
-                            <ChangePhoneHeadingWrapper>
+                            <OptionHeadingLabelWrapper>
+                                <LuSmartphone size={iconSize} />
                                 <Heading size="minimum">Phone</Heading>
-                            </ChangePhoneHeadingWrapper>
+                            </OptionHeadingLabelWrapper>
                             <OptionInputWrapper>
                                 <Input placeholder="Type your new phone over here" type="tel" fit="100%" {...register('phone')} color={ errors.phone && "danger" || isValid && "success" } />
                                 {errors.phone &&

@@ -1,7 +1,7 @@
 import { HeaderLayout } from "@/layout/Header";
-import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
 import { LayoutContent } from "@/styles/pages/layout";
-import { RegisterButtonWrapper, RegisterForm, RegisterHeadingLabelWrapper, RegisterLabel, RegisterLabelsWrapper, RegisterTitleLabelWrapper } from "@/styles/pages/register";
+import { RegisterButtonWrapper, RegisterForm, RegisterLabel, RegisterLabelsWrapper, RegisterTitleLabelWrapper } from "@/styles/pages/register";
 import { Box, Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
@@ -58,10 +58,10 @@ export default function Register() {
                     <RegisterForm onSubmit={handleSubmit(handleSignUp)} action="">
                         <RegisterLabelsWrapper>
                             <RegisterLabel htmlFor="email">
-                                <RegisterHeadingLabelWrapper>
+                                <OptionHeadingLabelWrapper>
                                     <MdOutlineMail size={iconSize} />
                                     <Heading size="minimum">E-mail</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your e-mail" fit="100%" type="text" id="email" {...register('email')} color={ errors.email ? "danger" : isValid ? "success" : undefined } />
                                     {errors.email &&
@@ -76,10 +76,10 @@ export default function Register() {
                                 </OptionInputWrapper>
                             </RegisterLabel>
                             <RegisterLabel htmlFor="name">
-                                <RegisterHeadingLabelWrapper>
+                                <OptionHeadingLabelWrapper>
                                     <MdOutlineDriveFileRenameOutline size={iconSize} />
                                     <Heading size="minimum">Name</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your name" fit="100%" type="text" id="name" {...register('name')} color={ errors.name && "danger" || isValid && "success" } />
                                     {errors.name &&
@@ -94,10 +94,10 @@ export default function Register() {
                                 </OptionInputWrapper>
                             </RegisterLabel>
                             <RegisterLabel htmlFor="username">
-                                <RegisterHeadingLabelWrapper>
+                                <OptionHeadingLabelWrapper>
                                     <LuUser size={iconSize} />
                                     <Heading size="minimum">Username</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your username" fit="100%" type="text" id="username" {...register('username')} color={errors.username && "danger" || isValid && "success" } />
                                     {errors.username &&
@@ -112,10 +112,10 @@ export default function Register() {
                                 </OptionInputWrapper>
                             </RegisterLabel>
                             <RegisterLabel htmlFor="password">
-                                <RegisterHeadingLabelWrapper>
+                                <OptionHeadingLabelWrapper>
                                     <MdOutlinePassword size={iconSize} />
                                     <Heading size="minimum">Password</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your password" fit="100%" type="password" id="password" {...register('password')} color={ errors.password && "danger" || isValid && "success" } />
                                     {errors.password &&
@@ -130,10 +130,10 @@ export default function Register() {
                                 </OptionInputWrapper>
                             </RegisterLabel>
                             <RegisterLabel htmlFor="confirm-password">
-                                <RegisterHeadingLabelWrapper>
+                                <OptionHeadingLabelWrapper>
                                     <MdOutlinePassword size={iconSize} />
                                     <Heading size="minimum">Confirm password</Heading>
-                                </RegisterHeadingLabelWrapper>
+                                </OptionHeadingLabelWrapper>
                                 <OptionInputWrapper>
                                     <Input placeholder="Type your password again" fit="100%" type="password" id="confirm-password" {...register('confirmPassword')} color={ errors.confirmPassword && "danger" || isValid && "success" } />
                                     {errors.confirmPassword &&

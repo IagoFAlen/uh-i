@@ -3,12 +3,13 @@ import { OptionsProps } from "../types";
 import { SettingOption } from "../../SettingOption";
 import { Dialog } from "@/layout/Dialog";
 import { LiaUserSlashSolid } from "react-icons/lia";
-import { DangerActionWarning, DeactivateAccountContainer, DeactivateAccountHeadingWrapper, DeactivateAccountLabel, DeactivateAccountOptions, DestructiveActionConfirmation } from "@/styles/pages/dialog/deactivateaccount";
+import { DangerActionWarning, DeactivateAccountContainer, DeactivateAccountLabel, DeactivateAccountOptions, DestructiveActionConfirmation } from "@/styles/pages/dialog/deactivateaccount";
 import { Button, Heading, Input, Text } from "@bertiare-ui/react";
 import { TypeOf, z } from "zod";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { MatchingErrors, OptionInputWrapper } from "@/styles/pages/form";
+import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
+import { MdOutlinePassword } from "react-icons/md";
 
 const formSchema = z.object({
     password: z.string().min(1, 'Password is required')
@@ -30,6 +31,8 @@ export function DeactivateAccount(props: OptionsProps){
 
         }
     }
+    
+    const iconSize = 14
 
     return(
         <>
@@ -45,9 +48,10 @@ export function DeactivateAccount(props: OptionsProps){
                             <Text>Hi, seems you're requesting a destructive action, be careful! After <strong>30 days</strong> your account will be deleted.</Text>
                         </DangerActionWarning>
                         <DeactivateAccountLabel>
-                            <DeactivateAccountHeadingWrapper>
-                                <Heading size="minimum">Confirm password</Heading>
-                            </DeactivateAccountHeadingWrapper>
+                            <OptionHeadingLabelWrapper>
+                                <MdOutlinePassword size={iconSize} />
+                                <Heading size="minimum">Password</Heading>
+                            </OptionHeadingLabelWrapper>
                             <OptionInputWrapper>
                                 <Input placeholder="Type your password" type="password" fit="100%" {...register('password')} color={ errors.password && "danger" || isValid && "success" } />
                                 {errors.password &&
@@ -64,7 +68,7 @@ export function DeactivateAccount(props: OptionsProps){
                         <DestructiveActionConfirmation>
                             <Text weight="bold">Are you sure you want to deactivate your account?</Text>
                             <DeactivateAccountOptions>
-                                <Button variant="danger" type="button" fit="100%">Discard</Button>
+                                <Button variant="danger" type="button" fit="100%" onClick={() => props.handleDialogToggle('isDeactivateAccountOpen', props.isDialogOpen)} >Discard</Button>
                                 <Button variant="default" type="submit" fit="100%">Confirm</Button>
                             </DeactivateAccountOptions>
                         </DestructiveActionConfirmation>

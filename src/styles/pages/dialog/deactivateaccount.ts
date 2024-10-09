@@ -21,10 +21,6 @@ export const DeactivateAccountLabel = styled('label', {
 
 })
 
-export const DeactivateAccountHeadingWrapper = styled('div', {
-    padding: '$1 $4',
-})
-
 export const DangerActionWarning = styled('div', {
     display: 'flex',
     alignItems: 'center',
