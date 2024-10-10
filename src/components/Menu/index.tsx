@@ -1,4 +1,4 @@
-import { ButtonWrapper, FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuSectionItem, MenuSectionList, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
+import { ButtonWrapper, FooterContainer, LogoContainer, MenuContainer, MenuSectionItem, MenuSectionList, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
 import { MenuProps } from "./types";
 import { Tab } from "./Tab";
 import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople, MdOutlineSettings } from "react-icons/md";
