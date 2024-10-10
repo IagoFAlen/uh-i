@@ -36,14 +36,6 @@ export const RegisterTitleLabelWrapper = styled('div', {
     padding: '0 $4',
 })
 
-export const RegisterHeadingLabelWrapper = styled('div', {
-    display: 'flex',
-    alignItems: 'center',
-    justifyContent: 'flex-start',
-    gap: '$2',
-    padding: '$1 $2',
-})
-
 export const RegisterButtonWrapper = styled('div', {
     display: 'flex',
     alignItems: 'center',

@@ -6,7 +6,7 @@ export const TFAContainer = styled('div', {
     justifyContent: 'center',
     flexDirection: 'column',
     gap: '$4',
-    padding: '$2 $4',
+    padding: '$2 $8',
 })
 
 export const TFAOptions = styled('div', {

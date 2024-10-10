@@ -21,7 +21,7 @@ export const DialogBox = styled('div', {
     flexDirection: 'column',
     gap: '$2',
     padding: '$4',
-    width: '40rem',
+    width: '36rem',
     background: '$background',
     border: '1px solid $mutedInverse',
     borderRadius: '$md',

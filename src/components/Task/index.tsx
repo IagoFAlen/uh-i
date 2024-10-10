@@ -1,6 +1,5 @@
 import { WriteHeadingWrapper, WriteLabel } from "@/styles/pages/write";
 import { Heading, Input, TextArea } from "@bertiare-ui/react";
-import { useState } from "react";
 import { DiscardIcon } from "../DiscardIcon";
 
 interface TaskProps {

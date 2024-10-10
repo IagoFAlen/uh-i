@@ -11,6 +11,8 @@ import { z } from "zod";
 import { MatchingErrors, OptionHeadingLabelWrapper, OptionInputWrapper } from "@/styles/pages/form";
 import { LuUser } from "react-icons/lu";
 import { MdOutlineDriveFileRenameOutline, MdOutlineLocationOn } from "react-icons/md";
+import { EditAvatarBox, EditAvatarContainer } from "@/styles/pages/avatar";
+import { HiOutlinePencilSquare } from "react-icons/hi2";
 
 const formSchema = z.object({
     username: z.string(),
@@ -35,6 +37,7 @@ export function AccountDetailsChange(props: OptionsProps){
         }
     }
 
+    const avatarEditIconSize = 22
     const iconSize = 14
 
     return(
@@ -48,7 +51,13 @@ export function AccountDetailsChange(props: OptionsProps){
 
                 <Dialog isOpen={props.isDialogOpen} close={() => props.handleDialogToggle('isAccountDetailsOpen', props.isDialogOpen)}>
                     <AccountDetailsDialogContainer onSubmit={ handleSubmit(handleChangeAccountDetails) } action="">
-                        <Avatar size="xxlarge" src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg"/>
+                        <EditAvatarContainer>
+                            <Avatar size="xxlarge" src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg"/>
+                            <EditAvatarBox>
+                                <HiOutlinePencilSquare  size={avatarEditIconSize}/>
+                                <Text size="xsmall" weight="bold">Edit</Text>
+                            </EditAvatarBox>
+                        </EditAvatarContainer>
                         <Heading size="small">Dealenc</Heading>
                         <AccountDetailsLabel>
                             <OptionHeadingLabelWrapper>
