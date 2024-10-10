@@ -36,7 +36,7 @@ export const MenuContainer = styled('div', {
     width: '100%',
 })
 
-export const MenuSection = styled('div', {
+export const MenuSectionList = styled('ul', {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'center',
@@ -44,6 +44,14 @@ export const MenuSection = styled('div', {
     flexDirection: 'column',
     width: '100%',
 
+})
+
+export const MenuSectionItem = styled('li', {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
+    width: '100%',
+    listStyle: 'none',
 })
 
 export const SectionTitle = styled('div', {

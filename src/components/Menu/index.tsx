@@ -1,4 +1,4 @@
-import { ButtonWrapper, FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
+import { ButtonWrapper, FooterContainer, LogoContainer, MenuContainer, MenuSection, MenuSectionItem, MenuSectionList, MenuWrapper, SectionTitle } from "@/styles/pages/menu";
 import { MenuProps } from "./types";
 import { Tab } from "./Tab";
 import { MdOutlineHome, MdOutlineTrendingUp, MdOutlineExplore, MdOutlinePeople, MdOutlineSettings } from "react-icons/md";
@@ -63,82 +63,110 @@ export function Menu(props: MenuProps){
             </Navigate>
             <MenuWrapper>
                 <MenuContainer>
-                    <MenuSection>
-                        <Navigate variant="fit" href="/">
-                            <Tab title="Home" size="xsmall" variant={focusTab('home')} >
-                                <MdOutlineHome size={size}/>
-                            </Tab>
-                        </Navigate>
-                        <Navigate variant="fit" href="/trending">
-                            <Tab title="Trending" size="xsmall" variant={focusTab('trending')} >
-                                <MdOutlineTrendingUp size={size}/>
-                            </Tab>
-                        </Navigate>
-                        <Navigate variant="fit" href="/explore">
-                            <Tab title="Explore" size="xsmall" variant={focusTab('explore')} >
-                                <MdOutlineExplore size={size}/>
-                            </Tab>
-                        </Navigate>
-                        <Navigate variant="fit" href="/community">
-                            <Tab title="Community" size="xsmall" variant={focusTab('community')} >
-                                <MdOutlinePeople size={size}/>
-                            </Tab>
-                        </Navigate>
-                        <Navigate variant="fit" href="/write">
-                            <Tab title="Write" size="xsmall" variant={focusTab('write')} >
-                                <HiOutlinePencilSquare size={size}/>
-                            </Tab>
-                        </Navigate>
-                        <Navigate variant="fit" href="/settings">
-                            <Tab title="Settings" size="xsmall" variant={focusTab('settings')} >
-                                <MdOutlineSettings size={size}/>
-                            </Tab>
-                        </Navigate>
-                    </MenuSection>
+                    <MenuSectionList>
+                        <MenuSectionItem>
+                            <Navigate variant="fit" href="/">
+                                <Tab title="Home" size="xsmall" variant={focusTab('home')} >
+                                    <MdOutlineHome size={size}/>
+                                </Tab>
+                            </Navigate>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Navigate variant="fit" href="/trending">
+                                <Tab title="Trending" size="xsmall" variant={focusTab('trending')} >
+                                    <MdOutlineTrendingUp size={size}/>
+                                </Tab>
+                            </Navigate>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Navigate variant="fit" href="/explore">
+                                <Tab title="Explore" size="xsmall" variant={focusTab('explore')} >
+                                    <MdOutlineExplore size={size}/>
+                                </Tab>
+                            </Navigate>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Navigate variant="fit" href="/community">
+                                <Tab title="Community" size="xsmall" variant={focusTab('community')} >
+                                    <MdOutlinePeople size={size}/>
+                                </Tab>
+                            </Navigate>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Navigate variant="fit" href="/write">
+                                <Tab title="Write" size="xsmall" variant={focusTab('write')} >
+                                    <HiOutlinePencilSquare size={size}/>
+                                </Tab>
+                            </Navigate>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Navigate variant="fit" href="/settings">
+                                <Tab title="Settings" size="xsmall" variant={focusTab('settings')} >
+                                    <MdOutlineSettings size={size}/>
+                                </Tab>
+                            </Navigate>
+                        </MenuSectionItem>
+                    </MenuSectionList>
                 </MenuContainer>
                 <MenuContainer>
                     <SectionTitle>
                         <Heading size="xsmall">Following</Heading>
                     </SectionTitle>
-                    <MenuSection>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
+                    <MenuSectionList>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
                         <ButtonWrapper>
                             <Button variant="default" fit="100%">Show more</Button>
                         </ButtonWrapper>
-                    </MenuSection>
+                    </MenuSectionList>
                 </MenuContainer>
                 <MenuContainer>
                     <SectionTitle>
                         <Heading size="xsmall">Followers</Heading>
                     </SectionTitle>
-                    <MenuSection>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
-                        <Tab title="Iago Figueira" size="xxsmall" variant="profile">
-                            <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
-                        </Tab>
+                    <MenuSectionList>
+                    <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
+                        <MenuSectionItem>
+                            <Tab title="Iago Figueira" size="xxsmall" variant="profile">
+                                <Avatar src="https://i.pinimg.com/564x/05/e0/a1/05e0a17973cecac91653c194269f4253.jpg" size="xsmall"/>
+                            </Tab>
+                        </MenuSectionItem>
                         <ButtonWrapper>
                             <Button variant="default" fit="100%">Show more</Button>
                         </ButtonWrapper>
-                    </MenuSection>
+                    </MenuSectionList>
                 </MenuContainer>
                 <FooterContainer>
                     <Text size="xsmall">A Bertiare-ui app</Text>
